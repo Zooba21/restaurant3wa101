@@ -1,4 +1,0 @@
-<?php
-
-/*commentary test*/
-?>
