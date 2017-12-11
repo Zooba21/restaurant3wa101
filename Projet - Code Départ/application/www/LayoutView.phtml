@@ -24,19 +24,19 @@
 
 <!-- En-tête commune -->
 <header>
-    <h1>
-        <a href="<?= $requestUrl ?>">
-            <img src="<?= $wwwUrl ?>/images/logo.gif" height="63" width="57" alt="3WA Restaurant">Restaurant - Made In America !
-        </a>
-    </h1>
+  <nav>
+    <a href="<?= $requestUrl ?>"><img src="#" alt="101 Restaurant Logo"></a>
+    <span class="connectForm"> <i class="fa fa-globe" aria-hidden="true"></i></span>
+    <form name="connect" class="hide" method="post" action="">
+      <input type="text" placeholder="adresse e-mail">
+      <input type="text" placeholder="password">
+      <input type="submit" value="sign in">
+      <a href="<?= $requestUrl ?>/panier"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+  </nav>
+
+
 </header>
 
-<!-- Interface utilisateur -->
-<nav class="user-interface">
-    <ul class="link-list">
-        <!-- Code HTML/PHP à écrire -->
-    </ul>
-</nav>
 
 <main>
     <!-- Affichage du template lié à la vue -->
