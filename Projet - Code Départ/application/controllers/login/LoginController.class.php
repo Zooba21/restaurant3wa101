@@ -1,18 +1,22 @@
 <?php
 
-
 class LoginController
 {
-  public function httpGetMethod(Http $http, array $queryFields)
+  public function httpGetMethod()
   {
 
-    return [];
   }
+
   public function httpPostMethod(Http $http, array $queryFields)
   {
     $login = new UserModel(new Database);
-    $login->login($queryFields);
+
+    $loginForm = [$queryFields['email'],$queryFields['passwd']];
+    $result = $login->login($loginForm);
+
   }
+
 }
+
 
  ?>
