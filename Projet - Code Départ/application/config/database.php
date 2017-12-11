@@ -4,6 +4,6 @@
  * Database configuration settings used by PDO.
  */
 
-$config['dsn']      = '';
-$config['password'] = '';
-$config['user']     = '';
+$config['dsn']      = 'mysql:host=localhost;dbname="restaurant101';
+$config['password'] = 'root';
+$config['user']     = 'troiswa';

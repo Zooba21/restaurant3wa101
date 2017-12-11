@@ -27,3 +27,13 @@ I. Arborescence des dossiers, fichiers et nommage des classes
   Le nommage des dossiers, fichiers et classes est donc important pour que l'autoload puisse fonctionner et que les classes puissent être identifiées par le système.
 
   L'arborescence des controllers/models/view doit être identique.
+
+II. Informations nommage : 
+
+	A. BDD
+	
+		1. nom de la base : "restaurant 101"
+		2. user / mdp de la base : "root", "troiswa"
+
+		Ces informations sont renseignées dans le fichie Application/config/database.php
+
