@@ -1,5 +1,5 @@
 # restaurant3wa101
-Projet pédagogique 3WA - Formation développeur web
+P rojet pédagogique 3WA - Formation développeur web
 
 glossaire :
 
