@@ -28,6 +28,9 @@ I. Arborescence des dossiers, fichiers et nommage des classes
 
   L'arborescence des controllers/models/view doit être identique.
 
+	Les classes de type Model doivent être une extension de la classe AbstractModel.class.php. Cette classe contient 1 méthode permettant de créer une connexio à la base et permet dond d'éviter de créer cette méthode dans chaque class. 
+	Elle définit également un interface sur 3 méthodes (create, delete et find).
+
 II. Informations nommage : 
 
 	A. BDD
