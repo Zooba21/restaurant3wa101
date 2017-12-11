@@ -14,6 +14,15 @@ class LoginController
     $loginForm = [$queryFields['email'],$queryFields['passwd']];
     $result = $login->login($loginForm);
 
+    if ($queryFields['email'] == $result['mail'] && $queryFields['passwd'] == $result['password'])
+    {
+      
+    }
+    else
+    {
+
+    }
+
   }
 
 }
