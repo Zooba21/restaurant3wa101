@@ -11,3 +11,4 @@ abstract class AbstractModel implements ModelInterface
   abstract function find(int $id);
   abstract function delete(ind $id);*/
 }
+

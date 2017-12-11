@@ -26,14 +26,9 @@
     <a href="<?= $requestUrl ?>"><img src="#" alt="101 Restaurant Logo"></a>
     <span class="connectForm"> <i class="fa fa-globe" aria-hidden="true"></i></span>
 
-    <form name="connect" class="hide" method="post" action="">
+    <form name="connect" class="hide" method="post" action="<?= $requestUrl ?>/login">
       <input type="text" name='email' placeholder="adresse e-mail">
       <input type="text" name='passwd' placeholder="password">
-
-    <form name="connect" class="hide" method="post" action="<?= $requestUrl ?>/login.php">
-      <input type="text" placeholder="adresse e-mail">
-      <input type="text" placeholder="password">
-
       <input type="submit" value="sign in">
       <a href="<?= $requestUrl ?>/panier"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
     </section>
