@@ -24,22 +24,15 @@ class LoginController
 
     if ($queryFields['email'] == $result['mail'] && $queryFields['passwd'] == $result['password'])
     {
-
-      if ($result['rights'] == "Employed")
-      {
-        $_SERVER['id']=$result['id'];
-        $_SERVER['rights']=$result['rights'];
-      }
-      else
-      {
-
-      }
+      session_start();
+      $_SESSION['profil']['id']=$result['id'];
+      $_SESSION['profil']['rights']=$result['rights'];
+      $target->redirectTO('');
     }
     else
     {
-
+      echo('erreur : identifiant ou mot de passe incorrecte');
     }
-
   }
 
 }

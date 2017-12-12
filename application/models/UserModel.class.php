@@ -6,7 +6,7 @@ class UserModel extends AbstractModel
    * [SQL String correspondant à la chaîne de caractère permettant de récupérer une adresse e-mail correspondant à ce qui a été inscrit dans le formulaire de connexion]
    * @var string
    */
-  const SQL = "SELECT `mail`, `password`, `rights`, `id` FROM `user` as U INNER JOIN `password` as P on P.user_id=U.id WHERE mail=? LIMIT 1";
+  const SQL = "SELECT U.`mail`, P.`password`, U.`rights`, U.`id` FROM `user` as U INNER JOIN `password` as P on P.`user_id`= U.`id` WHERE mail=?";
   /**
    * [login Envoi une requête pour récupérer les informations utilisateurs correspondant à ce qui a été saisi dans le formulaire de connexion, si elles existent,]
    * @param  [array] $queryFields [e-mail inscrit dans le formulaire]

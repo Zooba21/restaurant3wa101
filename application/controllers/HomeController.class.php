@@ -15,6 +15,7 @@ class HomeController /*implements ControllerInterface*/
 
     public function httpPostMethod(Http $http, array $formFields)
     {
+      var_dump($_SESSION);
        /*
     	 * Méthode appelée en cas de requête HTTP POST
     	 *
