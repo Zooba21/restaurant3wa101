@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>3WA Restaurant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Resto 101</title>
     <link rel="stylesheet" href="<?= $wwwUrl ?>/css/normalize-3.0.3.min.css">
     <link rel="stylesheet" href="<?= $wwwUrl ?>/css/font-awesome-4.3.0.min.css">
 
@@ -13,24 +14,75 @@
     <link rel="stylesheet" href="<?= $wwwUrl ?>/css/ui-form.css">
     <link rel="stylesheet" href="<?= $wwwUrl ?>/css/ui-table.css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps|Karla">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <!-- Librairie jQuery -->
     <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+
 
     <!-- JavaScript de l'application -->
     <script src="<?= $wwwUrl ?>/js/utilities.js"></script>
 </head>
 <body>
   <nav>
-    <section class="contenair">
-    <a href="<?= $requestUrl ?>"><img src="#" alt="101 Restaurant Logo"></a>
-    <span class="connectForm"> <i class="fa fa-globe" aria-hidden="true"></i></span>
-
-    <form name="connect" class="hide" method="post" action="<?= $requestUrl ?>/login">
-      <input type="text" name='email' placeholder="adresse e-mail">
-      <input type="text" name='passwd' placeholder="password">
-      <input type="submit" value="sign in">
-      <a href="<?= $requestUrl ?>/panier"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+    <section class="contenair nav-top">
+      <div>
+        <a href="<?= $requestUrl ?>"><img style="width:30%;" src="<?= $wwwUrl ?>/images/logo-resto101.png" alt="101 Restaurant Logo"></a>
+        <span class="connectForm"> <i class="fa fa-globe" aria-hidden="true"></i></span>
+      </div>
+      <div>
+      <form name="connect" class="hide" method="post" action="<?= $requestUrl ?>/login">
+        <input type="text" name='email' placeholder="adresse e-mail">
+        <input type="text" name='passwd' placeholder="password">
+        <input type="submit" value="sign in">
+        <a href="<?= $requestUrl ?>/panier"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+      </form>
+        <div class="dropdown user user-menu menu-top">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <img src="<?= $wwwUrl ?>/images/david.jpg" class="user-image" alt="User Image">
+            <span class="hidden-xs">David GERBER</span>
+          </a>
+          <div class="dropdown-menu">
+            <!-- User image -->
+            <li class="user-header">
+              <img src="<?= $wwwUrl ?>/images/david.jpg" class="img-circle img-drpo" alt="">
+              <p>
+                David GERBER - Admin
+                <small>Member since Nov. 2012</small>
+              </p>
+            </li>
+            <!-- Menu Body -->
+            <li class="user-body">
+              <div class="row">
+                <div class="col-xs-4 text-center">
+                  <a href="#">Commandes</a>
+                </div>
+                <div class="col-xs-4 text-center">
+                  <a href="#">Factures</a>
+                </div>
+                <div class="col-xs-4 text-center">
+                  <a href="#">lol</a>
+                </div>
+              </div>
+              <!-- /.row -->
+            </li>
+            <!-- Menu Footer-->
+            <li class="user-footer">
+              <div class="pull-left">
+                <a href="#" class="btn btn-default btn-flat">Profile</a>
+              </div>
+              <div class="pull-right">
+                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- Control Sidebar Toggle Button -->
+        <div>
+          <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+        </div>
+      </div>
+      </div>
     </section>
   </nav>
 <!-- En-tête commune -->
@@ -42,16 +94,37 @@
 
 <!-- Pied de page commun -->
 <footer>
-    <ul class="link-list">
-        <li><img src="<?= $wwwUrl ?>/images/payment/visa.png" alt="Visa"></li>
-        <li><img src="<?= $wwwUrl ?>/images/payment/mastercard.png" alt="MasterCard"></li>
-        <li><img src="<?= $wwwUrl ?>/images/payment/paypal.png" alt="PayPal"></li>
-    </ul>
+   <section class="contenair ">
+     <div class="">
+       <p>Resto 101</p>
+       <p>46 Rue René Clair, 75018 Paris</p>
+       <p>+33 (0) 1 75 43 42 42</p>
+     </div>
+     <div class="map-footer">
+        <iframe src="https://www.google.fr/maps/d/embed?mid=1_8JIytSrEC12YOm56zIXKQUr7xFXd7Y7" width="400" height="300" frameborder="0" style="border:0"></iframe>
+     </div>
+     <div class="">
+       <p> Menu</p>
+       <ul>
+         <li></li>
+       </ul>
+     </div>
+     <div class="">
+       <ul class="link-list">
+           <li><img src="<?= $wwwUrl ?>/images/payment/visa.png" alt="Visa"></li>
+           <li><img src="<?= $wwwUrl ?>/images/payment/mastercard.png" alt="MasterCard"></li>
+           <li><img src="<?= $wwwUrl ?>/images/payment/paypal.png" alt="PayPal"></li>
+       </ul>
+     </div>
+   </section>
+
     <small>Réalisé avec <i class="fa fa-heart"></i>&nbsp; par les élèves de la 3W Academy</small>
 </footer>
 
 <!-- Code principal JavaScript de l'application -->
 <script src="<?= $wwwUrl ?>/js/main.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </body>
 </html>

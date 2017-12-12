@@ -18,16 +18,18 @@ class LoginController
   {
     $login = new UserModel(new Database);
     $target = new Http;
+    $session = new UserSession;
 
     $loginForm = [$queryFields['email']];
     $result = $login->login($loginForm);
-
+    var_dump($result);
+    var_dump($queryFields['email']);
+    var_dump($result['mail']);
     if ($queryFields['email'] == $result['mail'] && $queryFields['passwd'] == $result['password'])
     {
-      session_start();
-      $_SESSION['profil']['id']=$result['id'];
-      $_SESSION['profil']['rights']=$result['rights'];
-      $target->redirectTO('');
+      $session->create($result);
+      /*$target->redirectTO('');*/
+      var_dump($_SESSION);
     }
     else
     {
