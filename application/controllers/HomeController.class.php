@@ -4,18 +4,28 @@ class HomeController /*implements ControllerInterface*/
 {
     public function httpGetMethod(Http $http, array $queryFields)
     {
-    	/*
+      $session = new UserSession;
+      
+      if (isset($_SESSION['user']))
+      {
+        $render['user']=$_SESSION['user'];
+      }
+      else
+      {
+        $render = [];
+      }
+
+       /*
     	 * Méthode appelée en cas de requête HTTP GET
     	 *
     	 * L'argument $http est un objet permettant de faire des redirections etc.
     	 * L'argument $queryFields contient l'équivalent de $_GET en PHP natif.
     	 */
-    	  return [ ];
+    	  return $render;
     }
 
     public function httpPostMethod(Http $http, array $formFields)
     {
-      var_dump($_SESSION);
        /*
     	 * Méthode appelée en cas de requête HTTP POST
     	 *

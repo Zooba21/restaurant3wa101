@@ -1,0 +1,36 @@
+<div class="dropdown user user-menu menu-top">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+    <span class="hidden-xs">Se connecter</span>
+  </a>
+  <div class="dropdown-menu">
+    <!-- User image -->
+    <li class="user-header">
+
+    </li>
+    <!-- Menu Body -->
+    <form method="post" action="<?= $requestUrl ?>/login">
+    <li class="user-body">
+      <div class="row">
+        <div class="col-xs-4 text-center">
+          <input type="text" name="email" placeholder="mail">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4 text-center">
+          <input type="password" name="passwd" placeholder="password">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4 text-center">
+          <input type="submit" value="Log-in">
+        </div>
+      </div>
+    </li>
+  </form>
+</div>
+<!-- Control Sidebar Toggle Button -->
+<div>
+  <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+</div>
+</div>

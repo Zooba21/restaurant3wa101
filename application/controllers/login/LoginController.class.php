@@ -23,13 +23,11 @@ class LoginController
     $loginForm = [$queryFields['email']];
     $result = $login->login($loginForm);
     var_dump($result);
-    var_dump($queryFields['email']);
-    var_dump($result['mail']);
+
     if ($queryFields['email'] == $result['mail'] && $queryFields['passwd'] == $result['password'])
     {
       $session->create($result);
-      /*$target->redirectTO('');*/
-      var_dump($_SESSION);
+      $target->redirectTO('');
     }
     else
     {

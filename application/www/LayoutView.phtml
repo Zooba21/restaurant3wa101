@@ -31,57 +31,16 @@
         <span class="connectForm"> <i class="fa fa-globe" aria-hidden="true"></i></span>
       </div>
       <div>
-      <form name="connect" class="hide" method="post" action="<?= $requestUrl ?>/login">
-        <input type="text" name='email' placeholder="adresse e-mail">
-        <input type="text" name='passwd' placeholder="password">
-        <input type="submit" value="sign in">
-        <a href="<?= $requestUrl ?>/panier"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-      </form>
-        <div class="dropdown user user-menu menu-top">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <img src="<?= $wwwUrl ?>/images/david.jpg" class="user-image" alt="User Image">
-            <span class="hidden-xs">David GERBER</span>
-          </a>
-          <div class="dropdown-menu">
-            <!-- User image -->
-            <li class="user-header">
-              <img src="<?= $wwwUrl ?>/images/david.jpg" class="img-circle img-drpo" alt="">
-              <p>
-                David GERBER - Admin
-                <small>Member since Nov. 2012</small>
-              </p>
-            </li>
-            <!-- Menu Body -->
-            <li class="user-body">
-              <div class="row">
-                <div class="col-xs-4 text-center">
-                  <a href="#">Commandes</a>
-                </div>
-                <div class="col-xs-4 text-center">
-                  <a href="#">Factures</a>
-                </div>
-                <div class="col-xs-4 text-center">
-                  <a href="#">lol</a>
-                </div>
-              </div>
-              <!-- /.row -->
-            </li>
-            <!-- Menu Footer-->
-            <li class="user-footer">
-              <div class="pull-left">
-                <a href="#" class="btn btn-default btn-flat">Profile</a>
-              </div>
-              <div class="pull-right">
-                <a href="#" class="btn btn-default btn-flat">Sign out</a>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <!-- Control Sidebar Toggle Button -->
-        <div>
-          <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-        </div>
-      </div>
+        <?php if (isset($user))
+        {
+          include('Partiels/ProfileView.phtml');
+        }
+        else
+        {
+          include('Partiels/ConnectView.phtml');
+        }?>
+      
+
       </div>
     </section>
   </nav>
