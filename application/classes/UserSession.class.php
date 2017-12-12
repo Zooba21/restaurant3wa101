@@ -12,6 +12,14 @@ class UserSession
 		}
 	}
 
+	/*public function verify()
+	{
+		if (isset($_COOKIE['PHPSESSID']))
+		{
+			session_start();
+		}
+	}*/
+
     public function create($sessionArray)
     {
         // Construction de la session utilisateur.
@@ -21,7 +29,10 @@ class UserSession
             'FirstName' => $sessionArray['firstName'],
             'LastName'  => $sessionArray['name'],
             'Rights'    => $sessionArray['rights'],
-						'Mail'			=> $sessionArray['mail']
+						'Mail'			=> $sessionArray['mail'],
+						'InscriptionDate' => $sessionArray['inscriptionDate'],
+						'Avatar' => $sessionArray['url'],
+						'altAvatar' => $sessionArray['alt']
         ];
     }
 
@@ -29,6 +40,16 @@ class UserSession
     {
         // Destruction de l'ensemble de la session.
         $_SESSION = array();
+
+				if (ini_get("session.use_cookies"))
+				{
+				    $params = session_get_cookie_params();
+				    setcookie(session_name(), '', time() - 42000,
+				        $params["path"], $params["domain"],
+				        $params["secure"], $params["httponly"]
+				    );
+				}
+
         session_destroy();
     }
 
