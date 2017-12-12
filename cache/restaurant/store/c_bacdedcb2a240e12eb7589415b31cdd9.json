@@ -8,7 +8,7 @@
     "namespace": "",
     "file": "\/home\/wap38\/sites\/restaurant\/www\/config\/..\/application\/models\/UserModel.class.php",
     "relative_file": null,
-    "hash": "bd42762441576a8bdf497ed203a8ed39759e7bb4",
+    "hash": "4e27ef771303c5a37979d5460bfab205df2a3327",
     "parent": "AbstractModel",
     "modifiers": 0,
     "is_trait": false,
@@ -21,11 +21,16 @@
     "methods": {
         "login": {
             "name": "login",
-            "line": 7,
-            "short_desc": "",
+            "line": 15,
+            "short_desc": "[login Envoi une requ\u00eate pour r\u00e9cup\u00e9rer les informations utilisateurs correspondant \u00e0 ce qui a \u00e9t\u00e9 saisi dans le formulaire de connexion, si elles existent,]",
             "long_desc": "",
-            "hint": null,
-            "hint_desc": null,
+            "hint": [
+                [
+                    "\\[array_assoc]",
+                    false
+                ]
+            ],
+            "hint_desc": "[Tableau associatif contenant les mails, passwords et niveau de droit de l'utilisateur].",
             "tags": [],
             "modifiers": 1,
             "is_by_ref": "",
@@ -34,12 +39,17 @@
             "parameters": {
                 "queryFields": {
                     "name": "queryFields",
-                    "line": 7,
-                    "short_desc": null,
+                    "line": 15,
+                    "short_desc": "[e-mail inscrit dans le formulaire]",
                     "long_desc": null,
-                    "hint": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
                     "tags": [],
-                    "modifiers": null,
+                    "modifiers": "array",
                     "default": null,
                     "is_by_ref": false
                 }
@@ -49,8 +59,8 @@
     "constants": {
         "SQL": {
             "name": "SQL",
-            "line": 5,
-            "short_desc": "",
+            "line": 9,
+            "short_desc": "[SQL String correspondant \u00e0 la cha\u00eene de caract\u00e8re permettant de r\u00e9cup\u00e9rer une adresse e-mail correspondant \u00e0 ce qui a \u00e9t\u00e9 inscrit dans le formulaire de connexion]",
             "long_desc": ""
         }
     }

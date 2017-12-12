@@ -1,14 +1,14 @@
 {
     "name": "MealController",
-    "line": 3,
-    "short_desc": "",
+    "line": 5,
+    "short_desc": "[Class permettant de g\u00e9n\u00e9rer la page \/meal qui renvoi les meals disponibles sur le site]",
     "long_desc": "",
     "hint": null,
     "tags": [],
     "namespace": "",
     "file": "\/home\/wap38\/sites\/restaurant\/www\/config\/..\/application\/controllers\/meal\/MealController.class.php",
     "relative_file": null,
-    "hash": "79fd478158582076d5c798179c95ffc3fcd07134",
+    "hash": "e5f41e570ef93770e76afbf304b66976ae0f0ce1",
     "parent": null,
     "modifiers": 0,
     "is_trait": false,
@@ -21,7 +21,7 @@
     "methods": {
         "httpGetMethod": {
             "name": "httpGetMethod",
-            "line": 5,
+            "line": 7,
             "short_desc": "",
             "long_desc": "",
             "hint": null,
@@ -31,7 +31,49 @@
             "is_by_ref": "",
             "exceptions": [],
             "errors": [],
-            "parameters": []
+            "parameters": {
+                "http": {
+                    "name": "http",
+                    "line": 7,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Http",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "Http"
+                        ],
+                        "attributes": {
+                            "startLine": 7,
+                            "endLine": 7
+                        }
+                    },
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "queryFields": {
+                    "name": "queryFields",
+                    "line": 7,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
         }
     },
     "constants": []

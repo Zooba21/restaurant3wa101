@@ -1,11 +1,16 @@
 <?php
-
+  /**
+   * [Class permettant de générer la page /meal qui renvoi les meals disponibles sur le site]
+   */
   class MealController
   {
-    public function httpGetMethod()
+    public function httpGetMethod(Http $http, array $queryFields)
     {
-      return ['name'=>'menu test'];
+      $id = $queryFields['id'];
+      $entity = new MealModel(new Database);
+      $result = $entity->findOne($id);
     }
+
   }
 
  ?>
