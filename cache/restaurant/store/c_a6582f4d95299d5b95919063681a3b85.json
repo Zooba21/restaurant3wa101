@@ -1,0 +1,96 @@
+{
+    "name": "InterceptingFilter",
+    "line": 3,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "",
+    "file": "\/home\/wap38\/sites\/restaurant\/www\/config\/..\/library\/InterceptingFilter.interface.php",
+    "relative_file": null,
+    "hash": "135f92c48c18f789848edc98e926b2765e77c9cc",
+    "parent": null,
+    "modifiers": null,
+    "is_trait": false,
+    "is_interface": true,
+    "aliases": null,
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "run": {
+            "name": "run",
+            "line": 5,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "http": {
+                    "name": "http",
+                    "line": 5,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Http",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "Http"
+                        ],
+                        "attributes": {
+                            "startLine": 5,
+                            "endLine": 5
+                        }
+                    },
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "queryFields": {
+                    "name": "queryFields",
+                    "line": 5,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "formFields": {
+                    "name": "formFields",
+                    "line": 5,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

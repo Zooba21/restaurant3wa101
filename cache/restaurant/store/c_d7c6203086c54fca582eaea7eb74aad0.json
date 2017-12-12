@@ -1,0 +1,38 @@
+{
+    "name": "MealController",
+    "line": 3,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "",
+    "file": "\/home\/wap38\/sites\/restaurant\/www\/config\/..\/application\/controllers\/meal\/MealController.class.php",
+    "relative_file": null,
+    "hash": "79fd478158582076d5c798179c95ffc3fcd07134",
+    "parent": null,
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": null,
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "httpGetMethod": {
+            "name": "httpGetMethod",
+            "line": 5,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

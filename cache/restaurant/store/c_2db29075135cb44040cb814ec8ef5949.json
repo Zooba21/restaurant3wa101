@@ -1,0 +1,99 @@
+{
+    "name": "LoginController",
+    "line": 5,
+    "short_desc": "[LoginController description]",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "",
+    "file": "\/home\/wap38\/sites\/restaurant\/www\/config\/..\/application\/controllers\/login\/LoginController.class.php",
+    "relative_file": null,
+    "hash": "6fa1b61d8d35f99222383e457c6636c754d861c0",
+    "parent": null,
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": null,
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "httpGetMethod": {
+            "name": "httpGetMethod",
+            "line": 7,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "httpPostMethod": {
+            "name": "httpPostMethod",
+            "line": 17,
+            "short_desc": "[httpPostMethod Op\u00e8re la v\u00e9rification du formulaire de connexion et remplit le cas \u00e9ch\u00e9ant la variable $_SERVER (id utilisateur et niveau de droits) puis redirige l'utilisateur sur la page d'accueil.]",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\[void]",
+                    false
+                ]
+            ],
+            "hint_desc": "[pas de return]",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "http": {
+                    "name": "http",
+                    "line": 17,
+                    "short_desc": "[Type de requ\u00eate (GET ou POST)]",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Http",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "Http"
+                        ],
+                        "attributes": {
+                            "startLine": 17,
+                            "endLine": 17
+                        }
+                    },
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "queryFields": {
+                    "name": "queryFields",
+                    "line": 17,
+                    "short_desc": "[Contenu du $_POST]",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

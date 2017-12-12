@@ -28,15 +28,30 @@ I. Arborescence des dossiers, fichiers et nommage des classes
 
   L'arborescence des controllers/models/view doit être identique.
 
-	Les classes de type Model doivent être une extension de la classe AbstractModel.class.php. Cette classe contient 1 méthode permettant de créer une connexio à la base et permet dond d'éviter de créer cette méthode dans chaque class. 
+	Les classes de type Model doivent être une extension de la classe AbstractModel.class.php. Cette classe contient 1 méthode permettant de créer une connexio à la base et permet dond d'éviter de créer cette méthode dans chaque class.
 	Elle définit également un interface sur 3 méthodes (create, delete et find).
 
-II. Informations nommage : 
+II. Informations nommage :
 
 	A. BDD
-	
+
 		1. nom de la base : "restaurant 101"
 		2. user / mdp de la base : "root", "troiswa"
 
 		Ces informations sont renseignées dans le fichie Application/config/database.php
 
+III. Documentation
+
+L'accès à la documentation est accessible via le localHost (<racine de l'application>/www/build/restaurant).
+
+  Il est nécessaire d'installer composer et Sami:
+  - composer require symfony/Finder
+  - composer require sami/sami
+
+  Première exécution :
+  Conserver le fichier config présent dans le repository (www/config/config.php) et entrer la commande suivante dans le terminal :
+
+  - php vendor sami/sami/sami.php render www/config.php
+
+  Commande de mise à jour de la doc :
+  - php vedor/sami/sami.php update www/config/config.php

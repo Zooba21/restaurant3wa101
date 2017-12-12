@@ -1,0 +1,136 @@
+{
+    "name": "HomeController",
+    "line": 3,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "",
+    "file": "\/home\/wap38\/sites\/restaurant\/www\/config\/..\/application\/controllers\/HomeController.class.php",
+    "relative_file": null,
+    "hash": "94e81f065a4713e0c92652b1c8be3da16ad8ead7",
+    "parent": null,
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": null,
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "httpGetMethod": {
+            "name": "httpGetMethod",
+            "line": 5,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "http": {
+                    "name": "http",
+                    "line": 5,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Http",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "Http"
+                        ],
+                        "attributes": {
+                            "startLine": 5,
+                            "endLine": 5
+                        }
+                    },
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "queryFields": {
+                    "name": "queryFields",
+                    "line": 5,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "httpPostMethod": {
+            "name": "httpPostMethod",
+            "line": 16,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "http": {
+                    "name": "http",
+                    "line": 16,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Http",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "Http"
+                        ],
+                        "attributes": {
+                            "startLine": 16,
+                            "endLine": 16
+                        }
+                    },
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "formFields": {
+                    "name": "formFields",
+                    "line": 16,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

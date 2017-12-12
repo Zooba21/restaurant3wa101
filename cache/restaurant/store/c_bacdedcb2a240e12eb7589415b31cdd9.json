@@ -1,0 +1,57 @@
+{
+    "name": "UserModel",
+    "line": 3,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "",
+    "file": "\/home\/wap38\/sites\/restaurant\/www\/config\/..\/application\/models\/UserModel.class.php",
+    "relative_file": null,
+    "hash": "bd42762441576a8bdf497ed203a8ed39759e7bb4",
+    "parent": "AbstractModel",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": null,
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "login": {
+            "name": "login",
+            "line": 7,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "queryFields": {
+                    "name": "queryFields",
+                    "line": 7,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": {
+        "SQL": {
+            "name": "SQL",
+            "line": 5,
+            "short_desc": "",
+            "long_desc": ""
+        }
+    }
+}
