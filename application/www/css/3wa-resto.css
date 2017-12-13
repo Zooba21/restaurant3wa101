@@ -39,8 +39,9 @@ nav section{
 
 cite{
   text-align: center;
-  padding: 30px auto;
+  padding: 40px auto;
   font-size: 2.5em;
+  font-family: 'Raleway', sans-serif;
 }
 
 .img-resp{
@@ -68,10 +69,7 @@ fieldset legend
     font-weight: bold;
 }
 
-footer
-{
-    /* structure */
-    margin-top: 3em;
+footer{
     /* presentation */
     background-image: url(../images/bg-footer.jpg);
     background-repeat: no-repeat;
@@ -90,14 +88,18 @@ footer section div.map-footer{
   padding-top: 20px;
 }
 
-footer .fa-heart
-{
-    color: #EF4036;
+.colum{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.mb20{
+    margin-bottom: 20px;
 }
 
 h1
 {
-    color: #EF4036;
+
     font-family: 'Oleo Script Swash Caps', cursive;
     letter-spacing: 0.15em;
     text-align: center;
@@ -304,10 +306,10 @@ img {
 
 
  .dropdown-menu{
-     border-top-right-radius: 0;
-     border-top-left-radius: 0;
+     border-top-right-radius: 0!important;
+     border-top-left-radius: 0!important;
      padding: 1px 0 0 0;
-     border-top-width: 0;
+     border-top-width: 0!important;
      width: 280px;
      right: 0;
      left: auto !important;
@@ -340,6 +342,11 @@ img {
   text-align: center;
 }
 
+.user-footer{
+    display: flex;
+    justify-content: space-around;
+}
+
 .user-menu .user-image {
     width: 25px;
     height: 25px;
@@ -347,8 +354,17 @@ img {
     margin-right: 10px;
     margin-top: -2px;
   }
+.skin-blue, .main-header, .user-header {
+    background-color: #3c8dbc;
+}
+.navbar-nav>.user-menu>.dropdown-menu>.user-body {
+    padding: 15px;
+    border-bottom: 1px solid #f4f4f4;
+    border-top: 1px solid #dddddd;
+}
+
 .img-drpo{
-  padding: 10px auto;
+  padding: 10px auto!important;
   z-index: 5;
   height: 90px;
   width: 90px;
@@ -539,20 +555,85 @@ ul, menu, dir {
 /*
  * CSS de la page d'accueil
  */
-.notice
-{
-    /* structure */
-    margin-bottom: 2em;
+ .about-detail .chef-detail i img {
+     border-radius: 100%;
+ }
 
-    /* presentation */
-    background-color: rgba(208, 255, 255, 0.33);
-    border: 1px solid #339966;
-    border-radius: 6px;
-    color: #339966;
-    font-size: 1.33em;
-    text-align: center;
+ .about-detail .chef-detail i, .about-detail .chef-detail span, .about-detail .chef-detail .cnt {
+    display: inline-block;
+  }
+
+.about-img-block div {
+    margin-bottom: 30px;
+    text-align: right;
+    width: 80%;
 }
 
+.section-header h3 {
+    color: #c59d5f;
+    font-family: 'Great Vibes', cursive;
+    font-size: 65px;
+    line-height: 84px;
+    letter-spacing: 2.6px;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: relative;
+    text-transform: capitalize;
+}
+
+.section-header h4 {
+    color: #222222;
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    margin-top: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 40px;
+}
+
+.services-section .srv-box .img-box {
+    display: inline-block;
+    width: 100%;
+    border: 1px solid #c59d5f;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 4px;
+}
+
+.bloc-nl{
+  background-image: url('../images/newsletter-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #fff;
+  padding: 20px 0;
+}
+
+.section-header {
+    margin-bottom: 60px;
+    padding-bottom: 27px;
+    position: relative;
+}
+
+.section-header::before {
+    background-image: url(../images/section-header-sep.png);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    display: inline-block;
+    content: "";
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    position: absolute;
+    height: 24px;
+}
+.services-section {
+    padding-top: 100px;
+    padding-bottom: 70px;
+}
 
 /*
  * CSS de la page de commande
