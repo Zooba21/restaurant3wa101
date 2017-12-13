@@ -3,8 +3,8 @@
     <img src="<?= $wwwUrl ?>/images/logo-resto101.png" alt="">
   </div>
     <div class="register-box-body">
-      <p>Enrgistrez vous !</p>
-      <form class="" action="index.html" method="post">
+      <p>Enregistrez vous !</p>
+      <form class="" action="<?= $requestUrl ?>/profile" method="post">
         <div class="form-group has-feedback">
           <input  class="form-control" type="text" name="" value="" placeholder="Nom Complet">
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -18,8 +18,12 @@
           <span class="glyphicon glyphicon-lock form-control-feedback" ></span>
         </div>
         <div class="form-group has-feedback">
-            <input  class="form-control" type="text" name="" value="" placeholder="Retape Mot de Passe">
+            <input  class="form-control" type="text" name="" value="" placeholder="Retaper Mot de Passe">
           <span class="glyphicon glyphicon-log-in form-control-feedback" ></span>
+        </div>
+
+	<div class="form-group has-feedback">
+            <input  class="form-control" type="submit" value="S'inscrire">
         </div>
       </form>
       <div class="social-auth-links text-center">
