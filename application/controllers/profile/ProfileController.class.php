@@ -1,16 +1,11 @@
 <?php
 
-class HomeController /*implements ControllerInterface*/
-{
+  class ProfileController
+  {
     public function httpGetMethod(Http $http, array $queryFields)
     {
-      $render = (new UserSession)->getAll();
-      
-      $render['flashbag']= new FlashBag;
-
-
-
-
+      $session = new UserSession;
+      var_dump($_SESSION);
 
        /*
     	 * Méthode appelée en cas de requête HTTP GET
@@ -18,8 +13,7 @@ class HomeController /*implements ControllerInterface*/
     	 * L'argument $http est un objet permettant de faire des redirections etc.
     	 * L'argument $queryFields contient l'équivalent de $_GET en PHP natif.
     	 */
-
-    	  return $render;
+    	  return [ ];
     }
 
     public function httpPostMethod(Http $http, array $formFields)
@@ -32,6 +26,6 @@ class HomeController /*implements ControllerInterface*/
     	 */
     	return [ ];
     }
+  }
 
-
-}
+?>

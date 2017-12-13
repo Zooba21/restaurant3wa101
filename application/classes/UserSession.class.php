@@ -12,14 +12,11 @@ class UserSession
 		}
 	}
 
-	/*public function verify()
-	{
-		if (isset($_COOKIE['PHPSESSID']))
-		{
-			session_start();
-		}
-	}*/
-
+/**
+ * Créer le tableau de Session ($_SESSION) au moment de la connexion de l'utilisateur.
+ * @param  [array] $sessionArray [contenu de la requête SQL permettant la connexion]
+ * @return [void]               [Pas de return]
+ */
     public function create($sessionArray)
     {
         // Construction de la session utilisateur.
@@ -34,6 +31,7 @@ class UserSession
 						'Avatar' => $sessionArray['url'],
 						'altAvatar' => $sessionArray['alt']
         ];
+        var_dump($_SESSION);
     }
 
     public function destroy()
@@ -114,5 +112,24 @@ class UserSession
 		}
 
 		return false;
+	}
+
+	/**
+	 * Renvoi le contenu du tableau de Session dans une variable Render. Cette variable doit être retournée dans la méthode HttpGetMethod du Controller pour permettre le maintien de la connexion. La commande a exécuter dans le controller est la suivante :
+	 * $render = (new UserSession)->getAll();
+	 * Cette commande doit être présente au départ de chacune des class de type controller.
+	 * @param  array  $render [contenu du $render]
+	 * @return [array]         [$render est un tableau associatif auquel a été ajouté une clef 'user' si l'utilisateur est connecté. Dans le cas contraire, celui-ci est vide.]
+	 */
+	public function getAll(array $render = [])
+	{
+		if ($this->isAuthenticated())
+		{
+			return array_merge($render, ['user'=>$_SESSION['user']]);
+		}
+		else
+		{
+			return $render;
+		}
 	}
 }

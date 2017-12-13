@@ -51,7 +51,7 @@ II. Informations diverses :
 
 		  Première exécution :
 			  Conserver le fichier config présent dans le repository (www/config/config.php) et entrer la commande suivante dans le terminal :
-			  - php vendor sami/sami/sami.php render www/config.php
+			  - php vendor/sami/sami/sami.php render www/config/config.php
 
 		  Commande de mise à jour de la doc :
-			  - php vedor/sami/sami.php update www/config/config.php
+			  - php vendor/sami/sami/sami.php update www/config/config.php

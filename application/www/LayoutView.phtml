@@ -24,27 +24,42 @@
     <script src="<?= $wwwUrl ?>/js/utilities.js"></script>
 </head>
 <body>
-  <nav>
-    <section class="contenair nav-top">
-      <div>
-        <a href="<?= $requestUrl ?>"><img style="width:30%;" src="<?= $wwwUrl ?>/images/logo-resto101.png" alt="101 Restaurant Logo"></a>
-      </div>
-      <div>
-        <?php if (isset($user))
+  <header>
+    <nav>
+      <section class="contenair nav-top">
+        <div>
+          <a href="<?= $requestUrl ?>"><img style="width:30%;" src="<?= $wwwUrl ?>/images/logo-resto101.png" alt="101 Restaurant Logo"></a>
+          <span class="connectForm"> <i class="fa fa-globe" aria-hidden="true"></i></span>
+        </div>
+        <div>
+          <?php if (isset($user))
+          {
+            include('Partiels/ProfileView.phtml');
+          }
+          else
+          {
+            include('Partiels/ConnectView.phtml');
+          }?>
+        </section>
+      </nav>
+
+        </div>
+        <?php
+        if (isset($_SESSION['flashbag']) && !empty($_SESSION['flashbag']))
         {
-          include('Partiels/ProfileView.phtml');
-        }
-        else
-        {
-          include('Partiels/ConnectView.phtml');
-        }?>
-        <!-- Control Sidebar Toggle Button -->
-      </div>
-      <div>
-        <a href="#" data-toggle="control-sidebar"><i class="fa fa-shopping-cart"></i></a>
-      </div>
-    </section>
-  </nav>
+          if($flashbag->hasMessages() == true)
+          {?>
+            <aside id="notice" class="notice">
+                <?php foreach($flashbag->fetchMessages() as $message)
+                { ?>
+                  <p><?= $message ?></p>
+
+                <?php
+              } ?>
+            </aside>
+        <?php  }
+      } ?>
+  </header>
 <!-- En-tête commune -->
 
 <main>

@@ -8,7 +8,7 @@
     "namespace": "",
     "file": "\/home\/wap38\/sites\/restaurant\/www\/config\/..\/application\/classes\/UserSession.class.php",
     "relative_file": null,
-    "hash": "64e64657a0c9df217a35fb9c5bff839c8d37163d",
+    "hash": "4e1489141bf7cc68fba75b3d59eac8bcd305788f",
     "parent": null,
     "modifiers": 0,
     "is_trait": false,
@@ -35,11 +35,16 @@
         },
         "create": {
             "name": "create",
-            "line": 15,
-            "short_desc": "",
+            "line": 20,
+            "short_desc": "Cr\u00e9er le tableau de Session ($_SESSION) au moment de la connexion de l'utilisateur.",
             "long_desc": "",
-            "hint": null,
-            "hint_desc": null,
+            "hint": [
+                [
+                    "\\[void]",
+                    false
+                ]
+            ],
+            "hint_desc": "[Pas de return]",
             "tags": [],
             "modifiers": 1,
             "is_by_ref": "",
@@ -48,10 +53,15 @@
             "parameters": {
                 "sessionArray": {
                     "name": "sessionArray",
-                    "line": 15,
-                    "short_desc": null,
+                    "line": 20,
+                    "short_desc": "[contenu de la requ\u00eate SQL permettant la connexion]",
                     "long_desc": null,
-                    "hint": null,
+                    "hint": [
+                        [
+                            "\\[array]",
+                            false
+                        ]
+                    ],
                     "tags": [],
                     "modifiers": null,
                     "default": null,
@@ -61,7 +71,7 @@
         },
         "destroy": {
             "name": "destroy",
-            "line": 28,
+            "line": 37,
             "short_desc": "",
             "long_desc": "",
             "hint": null,
@@ -75,7 +85,7 @@
         },
         "getEmail": {
             "name": "getEmail",
-            "line": 35,
+            "line": 54,
             "short_desc": "",
             "long_desc": "",
             "hint": null,
@@ -89,7 +99,7 @@
         },
         "getFirstName": {
             "name": "getFirstName",
-            "line": 45,
+            "line": 64,
             "short_desc": "",
             "long_desc": "",
             "hint": null,
@@ -103,7 +113,7 @@
         },
         "getFullName": {
             "name": "getFullName",
-            "line": 55,
+            "line": 74,
             "short_desc": "",
             "long_desc": "",
             "hint": null,
@@ -117,7 +127,7 @@
         },
         "getLastName": {
             "name": "getLastName",
-            "line": 65,
+            "line": 84,
             "short_desc": "",
             "long_desc": "",
             "hint": null,
@@ -131,7 +141,7 @@
         },
         "getUserId": {
             "name": "getUserId",
-            "line": 75,
+            "line": 94,
             "short_desc": "",
             "long_desc": "",
             "hint": null,
@@ -145,7 +155,7 @@
         },
         "isAuthenticated": {
             "name": "isAuthenticated",
-            "line": 85,
+            "line": 104,
             "short_desc": "",
             "long_desc": "",
             "hint": null,
@@ -156,6 +166,42 @@
             "exceptions": [],
             "errors": [],
             "parameters": []
+        },
+        "getAll": {
+            "name": "getAll",
+            "line": 124,
+            "short_desc": "Renvoi le contenu du tableau de Session dans une variable Render. Cette variable doit \u00eatre retourn\u00e9e dans la m\u00e9thode HttpGetMethod du Controller pour permettre le maintien de la connexion. La commande a ex\u00e9cuter dans le controller est la suivante :\n$render = (new UserSession)->getAll();\nCette commande doit \u00eatre pr\u00e9sente au d\u00e9part de chacune des class de type controller.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\[array]",
+                    false
+                ]
+            ],
+            "hint_desc": "[$render est un tableau associatif auquel a \u00e9t\u00e9 ajout\u00e9 une clef 'user' si l'utilisateur est connect\u00e9. Dans le cas contraire, celui-ci est vide.]",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "render": {
+                    "name": "render",
+                    "line": 124,
+                    "short_desc": "[contenu du $render]",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "[]",
+                    "is_by_ref": false
+                }
+            }
         }
     },
     "constants": []

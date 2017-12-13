@@ -20,18 +20,20 @@ class LoginController
     $target = new Http;
     $session = new UserSession;
 
-    $loginForm = [$queryFields['email']];
+    $loginForm = [$queryFields['email'],$queryFields['passwd']];
     $result = $login->login($loginForm);
     var_dump($result);
 
-    if ($queryFields['email'] == $result['mail'] && $queryFields['passwd'] == $result['password'])
+    if (!empty($result))
     {
       $session->create($result);
       $target->redirectTO('');
     }
     else
     {
-      echo('erreur : identifiant ou mot de passe incorrecte');
+      $flashBag = new Flashbag;
+      $flashBag->add("Identifiant ou mot de passe incorrect ! Veuillez réessayer.");
+      $target->redirectTO('');
     }
   }
 
