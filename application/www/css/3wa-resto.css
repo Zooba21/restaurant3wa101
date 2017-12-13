@@ -261,15 +261,6 @@ img {
     background-color: #fff;
     border: 1px solid #ddd;
 }
-<<<<<<< HEAD
-label {
-    display: inline-block;
-    max-width: 100%;
-    margin-bottom: 5px;
-    font-weight: 700;
-}
-=======
->>>>>>> 328863e2cda82cb6a49e974434dfce80a1d864bb
 
 .link-list,
 .generic-form ul
@@ -291,24 +282,6 @@ label {
     font-size: 75%;
     vertical-align: bottom;
     text-align: center;
-}
-
-@media (min-width: 992px){
-  .col-sm-2 {
-      width: 16.66666667%;
-  }
-  .col-sm-10 {
-    width: 83.33333333%;
-}
-  .col-md-3 {
-      width: 25%;
-  }
-
-  .col-md-9 {
-   width: 75%;
-}
-
-
 }
 
 
