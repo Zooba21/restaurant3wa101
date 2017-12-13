@@ -10,32 +10,32 @@ class FlashBag
         }
 
         // Do we have already a flash bag ?
-        if(array_key_exists('flash-bag', $_SESSION) == false)
+        if(array_key_exists('flashbag', $_SESSION) == false)
         {
             // No, create it.
-            $_SESSION['flash-bag'] = array();
+            $_SESSION['flashbag'] = array();
         }
     }
 
     public function add($message)
     {
         // Add the specified message at the end of the flash bag.
-        array_push($_SESSION['flash-bag'], $message);
+        array_push($_SESSION['flashbag'], $message);
     }
 
     public function fetchMessage()
     {
         // Consume the oldest flash bag message.
-        return array_shift($_SESSION['flash-bag']);
+        return array_shift($_SESSION['flashbag']);
     }
 
     public function fetchMessages()
     {
         // Consume all the flash bag messages.
-        $messages = $_SESSION['flash-bag'];
+        $messages = $_SESSION['flashbag'];
 
         // The flash bag is now empty.
-        $_SESSION['flash-bag'] = array();
+        $_SESSION['flashbag'] = array();
 
         return $messages;
     }
@@ -43,6 +43,6 @@ class FlashBag
     public function hasMessages()
     {
         // Do we have some messages in the flash bag ?
-        return empty($_SESSION['flash-bag']) == false;
+        return empty($_SESSION['flashbag']) == false;
     }
 }

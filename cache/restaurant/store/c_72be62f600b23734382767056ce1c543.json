@@ -1,14 +1,14 @@
 {
-    "name": "DashBoardController",
+    "name": "ProfileController",
     "line": 3,
     "short_desc": "",
     "long_desc": "",
     "hint": null,
     "tags": [],
     "namespace": "",
-    "file": "\/home\/wap38\/sites\/restaurant\/www\/config\/..\/application\/controllers\/dashboard\/DashboardController.class.php",
+    "file": "\/home\/wap38\/sites\/restaurant\/www\/config\/..\/application\/controllers\/profile\/ProfileController.class.php",
     "relative_file": null,
-    "hash": "044060dfc2b3ad1d086d36c8fcb726139ff2c80c",
+    "hash": "58871a1d440e181db314c95cbfeb49d8f61dbf8b",
     "parent": null,
     "modifiers": 0,
     "is_trait": false,
@@ -77,7 +77,7 @@
         },
         "httpPostMethod": {
             "name": "httpPostMethod",
-            "line": 18,
+            "line": 19,
             "short_desc": "",
             "long_desc": "",
             "hint": null,
@@ -90,7 +90,7 @@
             "parameters": {
                 "http": {
                     "name": "http",
-                    "line": 18,
+                    "line": 19,
                     "short_desc": null,
                     "long_desc": null,
                     "hint": [
@@ -106,16 +106,16 @@
                             "Http"
                         ],
                         "attributes": {
-                            "startLine": 18,
-                            "endLine": 18
+                            "startLine": 19,
+                            "endLine": 19
                         }
                     },
                     "default": null,
                     "is_by_ref": false
                 },
-                "queryFields": {
-                    "name": "queryFields",
-                    "line": 18,
+                "formFields": {
+                    "name": "formFields",
+                    "line": 19,
                     "short_desc": null,
                     "long_desc": null,
                     "hint": [

@@ -4,16 +4,13 @@ class HomeController /*implements ControllerInterface*/
 {
     public function httpGetMethod(Http $http, array $queryFields)
     {
-      $session = new UserSession;
+      $render = (new UserSession)->getAll();
       
-      if (isset($_SESSION['user']))
-      {
-        $render['user']=$_SESSION['user'];
-      }
-      else
-      {
-        $render = [];
-      }
+      $render['flashbag']= new FlashBag;
+
+
+
+
 
        /*
     	 * Méthode appelée en cas de requête HTTP GET
@@ -21,6 +18,7 @@ class HomeController /*implements ControllerInterface*/
     	 * L'argument $http est un objet permettant de faire des redirections etc.
     	 * L'argument $queryFields contient l'équivalent de $_GET en PHP natif.
     	 */
+
     	  return $render;
     }
 

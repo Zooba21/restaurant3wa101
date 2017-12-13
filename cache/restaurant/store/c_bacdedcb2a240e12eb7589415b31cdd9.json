@@ -8,7 +8,7 @@
     "namespace": "",
     "file": "\/home\/wap38\/sites\/restaurant\/www\/config\/..\/application\/models\/UserModel.class.php",
     "relative_file": null,
-    "hash": "2a1af49cd9c9c20c4c91262d8a278ff197ad9367",
+    "hash": "3acec048c3f90455fa2e9795eccf50f18929b2d1",
     "parent": "AbstractModel",
     "modifiers": 0,
     "is_trait": false,
@@ -21,7 +21,7 @@
     "methods": {
         "login": {
             "name": "login",
-            "line": 15,
+            "line": 16,
             "short_desc": "[login Envoi une requ\u00eate pour r\u00e9cup\u00e9rer les informations utilisateurs correspondant \u00e0 ce qui a \u00e9t\u00e9 saisi dans le formulaire de connexion, si elles existent,]",
             "long_desc": "",
             "hint": [
@@ -39,7 +39,7 @@
             "parameters": {
                 "queryFields": {
                     "name": "queryFields",
-                    "line": 15,
+                    "line": 16,
                     "short_desc": "[e-mail inscrit dans le formulaire]",
                     "long_desc": null,
                     "hint": [
@@ -59,7 +59,7 @@
     "constants": {
         "SQL": {
             "name": "SQL",
-            "line": 9,
+            "line": 10,
             "short_desc": "[SQL String correspondant \u00e0 la cha\u00eene de caract\u00e8re permettant de r\u00e9cup\u00e9rer une adresse e-mail correspondant \u00e0 ce qui a \u00e9t\u00e9 inscrit dans le formulaire de connexion]",
             "long_desc": ""
         }

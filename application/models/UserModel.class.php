@@ -7,7 +7,7 @@ class UserModel extends AbstractModel
    * @var string
    */
 
-   const SQL = "SELECT U.`inscriptionDate`, U.`mail`, P.`password`, U.`rights`, U.`id`, U.`name`, U.`firstName`, RU.`url`, RU.`alt` FROM `user` as U INNER JOIN `password` as P on P.`userId`=U.`id` INNER JOIN `ressourcesUser` as RU on RU.`userId`=U.`id` WHERE `mail`=?";
+   const SQL = "SELECT U.`inscriptionDate`, U.`mail`, P.`password`, U.`rights`, U.`id`, U.`name`, U.`firstName`, RU.`url`, RU.`alt` FROM `user` as U INNER JOIN `password` as P on P.`userId`=U.`id` INNER JOIN `ressourcesUser` as RU on RU.`userId`=U.`id` WHERE `mail`=? AND `password`=?";
   /**
    * [login Envoi une requête pour récupérer les informations utilisateurs correspondant à ce qui a été saisi dans le formulaire de connexion, si elles existent,]
    * @param  [array] $queryFields [e-mail inscrit dans le formulaire]

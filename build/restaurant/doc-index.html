@@ -165,7 +165,7 @@
                     <dd></dd><dt><a href="Configuration.html">Configuration</a></em></dt>
                     <dd></dd><dt><a href="ControllerInterface.html">ControllerInterface</a></em></dt>
                     <dd></dd><dt><a href="UserSession.html#method_create">UserSession::create</a>() &mdash; <em>Method in class <a href="UserSession.html">UserSession</a></em></dt>
-                    <dd></dd>        </dl><h2 id="letterD">D</h2>
+                    <dd>Créer le tableau de Session ($_SESSION) au moment de la connexion de l'utilisateur.</dd>        </dl><h2 id="letterD">D</h2>
         <dl id="index"><dt><a href="DashBoardController.html">DashBoardController</a></em></dt>
                     <dd></dd><dt><a href="Database.html">Database</a></em></dt>
                     <dd></dd><dt><a href="UserSession.html#method_destroy">UserSession::destroy</a>() &mdash; <em>Method in class <a href="UserSession.html">UserSession</a></em></dt>
@@ -212,7 +212,10 @@
                     <dd></dd><dt><a href="UserSession.html#method_getFullName">UserSession::getFullName</a>() &mdash; <em>Method in class <a href="UserSession.html">UserSession</a></em></dt>
                     <dd></dd><dt><a href="UserSession.html#method_getLastName">UserSession::getLastName</a>() &mdash; <em>Method in class <a href="UserSession.html">UserSession</a></em></dt>
                     <dd></dd><dt><a href="UserSession.html#method_getUserId">UserSession::getUserId</a>() &mdash; <em>Method in class <a href="UserSession.html">UserSession</a></em></dt>
-                    <dd></dd><dt><a href="__TwigTemplate_23199a40d318eac9da3c5ed2b82d0488ce63b0516ff43e5515f980c156ceafa1.html#method_getTemplateName">__TwigTemplate_23199a40d318eac9da3c5ed2b82d0488ce63b0516ff43e5515f980c156ceafa1::getTemplateName</a>() &mdash; <em>Method in class <a href="__TwigTemplate_23199a40d318eac9da3c5ed2b82d0488ce63b0516ff43e5515f980c156ceafa1.html">__TwigTemplate_23199a40d318eac9da3c5ed2b82d0488ce63b0516ff43e5515f980c156ceafa1</a></em></dt>
+                    <dd></dd><dt><a href="UserSession.html#method_getAll">UserSession::getAll</a>() &mdash; <em>Method in class <a href="UserSession.html">UserSession</a></em></dt>
+                    <dd>Renvoi le contenu du tableau de Session dans une variable Render. Cette variable doit être retournée dans la méthode HttpGetMethod du Controller pour permettre le maintien de la connexion. La commande a exécuter dans le controller est la suivante :
+$render = (new UserSession)->getAll();
+Cette commande doit être présente au départ de chacune des class de type controller.</dd><dt><a href="__TwigTemplate_23199a40d318eac9da3c5ed2b82d0488ce63b0516ff43e5515f980c156ceafa1.html#method_getTemplateName">__TwigTemplate_23199a40d318eac9da3c5ed2b82d0488ce63b0516ff43e5515f980c156ceafa1::getTemplateName</a>() &mdash; <em>Method in class <a href="__TwigTemplate_23199a40d318eac9da3c5ed2b82d0488ce63b0516ff43e5515f980c156ceafa1.html">__TwigTemplate_23199a40d318eac9da3c5ed2b82d0488ce63b0516ff43e5515f980c156ceafa1</a></em></dt>
                     <dd></dd><dt><a href="__TwigTemplate_23199a40d318eac9da3c5ed2b82d0488ce63b0516ff43e5515f980c156ceafa1.html#method_getDebugInfo">__TwigTemplate_23199a40d318eac9da3c5ed2b82d0488ce63b0516ff43e5515f980c156ceafa1::getDebugInfo</a>() &mdash; <em>Method in class <a href="__TwigTemplate_23199a40d318eac9da3c5ed2b82d0488ce63b0516ff43e5515f980c156ceafa1.html">__TwigTemplate_23199a40d318eac9da3c5ed2b82d0488ce63b0516ff43e5515f980c156ceafa1</a></em></dt>
                     <dd></dd><dt><a href="__TwigTemplate_23199a40d318eac9da3c5ed2b82d0488ce63b0516ff43e5515f980c156ceafa1.html#method_getSourceContext">__TwigTemplate_23199a40d318eac9da3c5ed2b82d0488ce63b0516ff43e5515f980c156ceafa1::getSourceContext</a>() &mdash; <em>Method in class <a href="__TwigTemplate_23199a40d318eac9da3c5ed2b82d0488ce63b0516ff43e5515f980c156ceafa1.html">__TwigTemplate_23199a40d318eac9da3c5ed2b82d0488ce63b0516ff43e5515f980c156ceafa1</a></em></dt>
                     <dd></dd><dt><a href="__TwigTemplate_2b087e6734b69211f797eb40d5692d88f88ef70f2a0229f4ca618bb013c2e936.html#method_getTemplateName">__TwigTemplate_2b087e6734b69211f797eb40d5692d88f88ef70f2a0229f4ca618bb013c2e936::getTemplateName</a>() &mdash; <em>Method in class <a href="__TwigTemplate_2b087e6734b69211f797eb40d5692d88f88ef70f2a0229f4ca618bb013c2e936.html">__TwigTemplate_2b087e6734b69211f797eb40d5692d88f88ef70f2a0229f4ca618bb013c2e936</a></em></dt>
@@ -269,11 +272,15 @@
                     <dd></dd><dt><a href="Http.html#method_hasUploadedFile">Http::hasUploadedFile</a>() &mdash; <em>Method in class <a href="Http.html">Http</a></em></dt>
                     <dd></dd><dt><a href="LoginController.html#method_httpGetMethod">LoginController::httpGetMethod</a>() &mdash; <em>Method in class <a href="LoginController.html">LoginController</a></em></dt>
                     <dd></dd><dt><a href="LoginController.html#method_httpPostMethod">LoginController::httpPostMethod</a>() &mdash; <em>Method in class <a href="LoginController.html">LoginController</a></em></dt>
-                    <dd>[httpPostMethod Opère la vérification du formulaire de connexion et remplit le cas échéant la variable $_SERVER (id utilisateur et niveau de droits) puis redirige l'utilisateur sur la page d'accueil.]</dd><dt><a href="MealController.html#method_httpGetMethod">MealController::httpGetMethod</a>() &mdash; <em>Method in class <a href="MealController.html">MealController</a></em></dt>
+                    <dd>[httpPostMethod Opère la vérification du formulaire de connexion et remplit le cas échéant la variable $_SERVER (id utilisateur et niveau de droits) puis redirige l'utilisateur sur la page d'accueil.]</dd><dt><a href="LogoutController.html#method_httpGetMethod">LogoutController::httpGetMethod</a>() &mdash; <em>Method in class <a href="LogoutController.html">LogoutController</a></em></dt>
+                    <dd></dd><dt><a href="LogoutController.html#method_httpPostMethod">LogoutController::httpPostMethod</a>() &mdash; <em>Method in class <a href="LogoutController.html">LogoutController</a></em></dt>
+                    <dd></dd><dt><a href="MealController.html#method_httpGetMethod">MealController::httpGetMethod</a>() &mdash; <em>Method in class <a href="MealController.html">MealController</a></em></dt>
                     <dd></dd><dt><a href="PanierController.html#method_httpGetMethod">PanierController::httpGetMethod</a>() &mdash; <em>Method in class <a href="PanierController.html">PanierController</a></em></dt>
                     <dd></dd><dt><a href="PanierController.html#method_httpPostMethod">PanierController::httpPostMethod</a>() &mdash; <em>Method in class <a href="PanierController.html">PanierController</a></em></dt>
                     <dd></dd><dt><a href="ProduitsController.html#method_httpGetMethod">ProduitsController::httpGetMethod</a>() &mdash; <em>Method in class <a href="ProduitsController.html">ProduitsController</a></em></dt>
                     <dd></dd><dt><a href="ProduitsController.html#method_httpPostMethod">ProduitsController::httpPostMethod</a>() &mdash; <em>Method in class <a href="ProduitsController.html">ProduitsController</a></em></dt>
+                    <dd></dd><dt><a href="ProfileController.html#method_httpGetMethod">ProfileController::httpGetMethod</a>() &mdash; <em>Method in class <a href="ProfileController.html">ProfileController</a></em></dt>
+                    <dd></dd><dt><a href="ProfileController.html#method_httpPostMethod">ProfileController::httpPostMethod</a>() &mdash; <em>Method in class <a href="ProfileController.html">ProfileController</a></em></dt>
                     <dd></dd><dt><a href="ReservationController.html#method_httpGetMethod">ReservationController::httpGetMethod</a>() &mdash; <em>Method in class <a href="ReservationController.html">ReservationController</a></em></dt>
                     <dd></dd><dt><a href="ReservationController.html#method_httpPostMethod">ReservationController::httpPostMethod</a>() &mdash; <em>Method in class <a href="ReservationController.html">ReservationController</a></em></dt>
                     <dd></dd>        </dl><h2 id="letterI">I</h2>
@@ -295,7 +302,8 @@
                     <dd></dd>        </dl><h2 id="letterL">L</h2>
         <dl id="index"><dt><a href="Configuration.html#method_load">Configuration::load</a>() &mdash; <em>Method in class <a href="Configuration.html">Configuration</a></em></dt>
                     <dd></dd><dt><a href="LoginController.html">LoginController</a></em></dt>
-                    <dd>[LoginController description]</dd><dt><a href="MicroKernel.html#method_loadClass">MicroKernel::loadClass</a>() &mdash; <em>Method in class <a href="MicroKernel.html">MicroKernel</a></em></dt>
+                    <dd>[LoginController description]</dd><dt><a href="LogoutController.html">LogoutController</a></em></dt>
+                    <dd></dd><dt><a href="MicroKernel.html#method_loadClass">MicroKernel::loadClass</a>() &mdash; <em>Method in class <a href="MicroKernel.html">MicroKernel</a></em></dt>
                     <dd></dd><dt><a href="UserModel.html#method_login">UserModel::login</a>() &mdash; <em>Method in class <a href="UserModel.html">UserModel</a></em></dt>
                     <dd>[login Envoi une requête pour récupérer les informations utilisateurs correspondant à ce qui a été saisi dans le formulaire de connexion, si elles existent,]</dd>        </dl><h2 id="letterM">M</h2>
         <dl id="index"><dt><a href="Http.html#method_moveUploadedFile">Http::moveUploadedFile</a>() &mdash; <em>Method in class <a href="Http.html">Http</a></em></dt>
@@ -322,6 +330,7 @@
                     <dd></dd>        </dl><h2 id="letterP">P</h2>
         <dl id="index"><dt><a href="PanierController.html">PanierController</a></em></dt>
                     <dd></dd><dt><a href="ProduitsController.html">ProduitsController</a></em></dt>
+                    <dd></dd><dt><a href="ProfileController.html">ProfileController</a></em></dt>
                     <dd></dd>        </dl><h2 id="letterQ">Q</h2>
         <dl id="index"><dt><a href="Database.html#method_query">Database::query</a>() &mdash; <em>Method in class <a href="Database.html">Database</a></em></dt>
                     <dd></dd><dt><a href="Database.html#method_queryOne">Database::queryOne</a>() &mdash; <em>Method in class <a href="Database.html">Database</a></em></dt>
