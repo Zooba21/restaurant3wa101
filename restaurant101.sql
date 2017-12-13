@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Mar 12 Décembre 2017 à 16:30
+-- Généré le :  Mer 13 Décembre 2017 à 16:55
 -- Version du serveur :  5.7.20-0ubuntu0.16.04.1
 -- Version de PHP :  7.0.22-0ubuntu0.16.04.1
 
@@ -103,7 +103,9 @@ CREATE TABLE `password` (
 --
 
 INSERT INTO `password` (`id`, `userId`, `password`) VALUES
-(1, 1, 'adminPSD');
+(1, 1, 'adminPSD'),
+(13, 22, 'test'),
+(14, 25, 'test');
 
 -- --------------------------------------------------------
 
@@ -164,14 +166,14 @@ CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `name` varchar(20) NOT NULL,
   `firstName` varchar(30) NOT NULL,
-  `address` text NOT NULL,
-  `address2` text NOT NULL,
-  `postCode` int(6) NOT NULL,
-  `city` varchar(40) NOT NULL,
-  `phone` int(11) NOT NULL,
+  `address` text,
+  `address2` text,
+  `postCode` int(6) DEFAULT NULL,
+  `city` varchar(40) DEFAULT NULL,
+  `phone` int(11) DEFAULT NULL,
   `mail` varchar(40) NOT NULL,
-  `inscriptionDate` datetime NOT NULL,
-  `rights` enum('User','Employed') NOT NULL
+  `inscriptionDate` datetime DEFAULT NULL,
+  `rights` enum('User','Employed') NOT NULL DEFAULT 'User'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -179,7 +181,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `firstName`, `address`, `address2`, `postCode`, `city`, `phone`, `mail`, `inscriptionDate`, `rights`) VALUES
-(1, 'admin', 'admin', '87 rue lolo', '', 75000, 'Paris', 658989898, 'administrator@restaurant101.fr', '2017-12-11 00:00:00', 'User');
+(1, 'admin', 'admin', '87 rue lolo', '', 75000, 'Paris', 658989898, 'administrator@restaurant101.fr', '2017-12-11 00:00:00', 'User'),
+(22, 'Masi', 'Benjamin', NULL, NULL, NULL, NULL, NULL, 'test@hotmail.fr', NULL, 'User'),
+(25, 'Benjamin', 'Masi', NULL, NULL, NULL, NULL, NULL, 'test2@hotmail.fr', NULL, 'User');
 
 --
 -- Index pour les tables exportées
@@ -244,7 +248,8 @@ ALTER TABLE `ressourcesUser`
 -- Index pour la table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `mail` (`mail`);
 
 --
 -- AUTO_INCREMENT pour les tables exportées
@@ -274,7 +279,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT pour la table `password`
 --
 ALTER TABLE `password`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT pour la table `reservation`
 --
@@ -294,7 +299,7 @@ ALTER TABLE `ressourcesUser`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 --
 -- Contraintes pour les tables exportées
 --
@@ -321,7 +326,7 @@ ALTER TABLE `orders`
 -- Contraintes pour la table `password`
 --
 ALTER TABLE `password`
-  ADD CONSTRAINT `password_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `user` (`id`);
+  ADD CONSTRAINT `password_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `user` (`id`) ON DELETE CASCADE;
 
 --
 -- Contraintes pour la table `reservation`
