@@ -10,27 +10,23 @@
     </li>
     <!-- Menu Body -->
     <form method="post" action="<?= $requestUrl ?>/login">
-    <li class="user-body">
-      <div class="row">
-        <div class="col-xs-4 text-center">
-          <input type="text" name="email" placeholder="mail">
-        </div>
+    <div class="box-body">
+      <div class="form-group">
+        <label for="">Address email</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" data-com.agilebits.onepassword.user-edited="yes">
       </div>
-      <div class="row">
-        <div class="col-xs-4 text-center">
-          <input type="password" name="passwd" placeholder="password">
-        </div>
+      <div class="form-group">
+        <label for="">Mot de passe</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" data-com.agilebits.onepassword.user-edited="yes">
       </div>
       <div class="row">
         <div class="col-xs-4 text-center">
           <input type="submit" value="Log-in">
         </div>
+        <div class="col-xs-4 text-center">
+          <a href="<?= $requestUrl?>/registre">S'incscrie</a>
+        </div>
       </div>
     </li>
   </form>
-</div>
-<!-- Control Sidebar Toggle Button -->
-<div>
-  <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-</div>
 </div>
