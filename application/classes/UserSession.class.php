@@ -17,6 +17,7 @@ class UserSession
  * @param  [array] $sessionArray [contenu de la requête SQL permettant la connexion]
  * @return [void]               [Pas de return]
  */
+
     public function create($sessionArray)
     {
 			foreach($sessionArray as $key=>$value)
