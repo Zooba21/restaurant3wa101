@@ -1,15 +1,15 @@
 <div class="dropdown user user-menu menu-top">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-    <img src="<?= $wwwUrl."/".$user['Avatar'] ?>" class="user-image" alt="<?= $user['altAvatar'] ?>">
-    <span class="hidden-xs"><?= $user['FirstName']." ".$user['LastName'] ?></span>
+    <img src="<?= $wwwUrl."/".$user['url'] ?>" class="user-image" alt="<?= $user['alt'] ?>">
+    <span class="hidden-xs"><?= $user['firstName']." ".$user['name'] ?></span>
   </a>
   <div class="dropdown-menu">
     <!-- User image -->
     <li class="user-header">
-      <img src="<?= $wwwUrl."/".$user['Avatar'] ?>" class="img-circle img-drpo" alt="<?= $user['altAvatar'] ?>">
+      <img src="<?= $wwwUrl."/".$user['url'] ?>" class="img-circle img-drpo" alt="<?= $user['alt'] ?>">
       <p>
-        <?= $user['FirstName']." ".$user['LastName'] ?>
-        <small>Member since <?= $user['InscriptionDate'] ?></small>
+        <?= $user['firstName']." ".$user['name'] ?>
+        <small>Member since <?= $user['inscriptionDate'] ?></small>
       </p>
     </li>
     <!-- Menu Body -->

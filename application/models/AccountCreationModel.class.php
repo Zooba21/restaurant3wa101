@@ -1,12 +1,12 @@
 <?php
 
-Class AccountCreationModel
+Class AccountCreationModel extends AbstractModel
 {
-  const SQLUser = "INSERT INTO `user`(`name`, `firstName`, `mail`) VALUES=(?,?,?)";
+  const SQLUser = "INSERT INTO `user`(`name`, `firstName`, `mail`) VALUES(?,?,?)";
 
-  const SQLPassword = "INSERT INTO `password`(`password`,`userId`) VALUES=()?,?)";
+  const SQLPassword = "INSERT INTO `password`(`password`,`userId`) VALUES(?,?)";
 
-  const SQLUserRessources = "INSERT INTO `userRessources`(`url`,`alt`,`userId`) VALUES=(?,?,?)";
+  const SQLUserRessources = "INSERT INTO `userRessources`(`url`,`alt`,`userId`) VALUES(?,?,?)";
 
   public function createUser(array $queryFields)
   {
@@ -19,8 +19,8 @@ Class AccountCreationModel
   public function createPassword(array $queryFields)
   {
     var_dump($queryFields);
-    //    $result = $this->database->executeSql(self::SQLPassword, $queryFields);
-    //    var_dump($result);
+    $result = $this->database->executeSql(self::SQLPassword, $queryFields);
+    var_dump($result);
     return($result);
   }
 

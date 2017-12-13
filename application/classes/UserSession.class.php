@@ -19,18 +19,15 @@ class UserSession
  */
     public function create($sessionArray)
     {
-        // Construction de la session utilisateur.
-        $_SESSION['user'] =
-        [
-            'UserId'    => $sessionArray['id'],
-            'FirstName' => $sessionArray['firstName'],
-            'LastName'  => $sessionArray['name'],
-            'Rights'    => $sessionArray['rights'],
-						'Mail'			=> $sessionArray['mail'],
-						'InscriptionDate' => $sessionArray['inscriptionDate'],
-						'Avatar' => $sessionArray['url'],
-						'altAvatar' => $sessionArray['alt']
-        ];
+			foreach($sessionArray as $key=>$value)
+			{
+				$_SESSION['user'][$key]=$value;
+			}
+			if (!isset($_SESSION['user']['url']))
+			{
+					$_SESSION['user']['url'] = "images/user/no-photo.png";
+					$_SESSION['user']['alt'] = "Avatar";
+			}
         var_dump($_SESSION);
     }
 
