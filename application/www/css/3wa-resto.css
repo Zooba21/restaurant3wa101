@@ -133,11 +133,15 @@ html
 /*
  * Classes génériques
  */
-.contenair{
-  max-width: 1100px;
-  width: 80%;
-  margin: 0 auto;
+
+.content {
+    max-width: 1100px;
+    min-height: 250px;
+    width: 80%;
+    padding: 15px 30px;
+    margin: 0 auto;
 }
+
 .hidden
 {
     display: none;
@@ -164,6 +168,22 @@ html
 .menu-top{
   display: flex;
 }
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.box {
+    position: relative;
+    border-radius: 3px;
+    background: #ffffff;
+    border-top: 3px solid #d2d6de;
+    margin-bottom: 20px;
+    width: 100%;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
 .box-header {
     color: #444;
     display: block;
@@ -197,6 +217,25 @@ html
     margin-bottom: 15px;
 }
 
+img {
+    vertical-align: middle;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+.img-responsive{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
 .link-list,
 .generic-form ul
 {
@@ -216,12 +255,42 @@ html
 {
     font-size: 75%;
     vertical-align: bottom;
+    text-align: center;
 }
+
+@media (min-width: 992px){
+
+
+  .col-md-3 {
+      width: 25%;
+  }
+
+  .col-md-9 {
+   width: 75%;
+}
+
+
+}
+
 
 
 /*
  * CSS de l'interface utilisateur
  */
+ .profile-user-img {
+    margin: 0 auto;
+    width: 100px;
+    padding: 3px;
+    border: 3px solid #d2d6de;
+}
+
+.profile-username {
+    font-size: 21px;
+    margin-top: 5px;
+}
+
+
+
  .dropdown-menu{
      border-top-right-radius: 0;
      border-top-left-radius: 0;
@@ -381,7 +450,9 @@ html
     margin: 0px;
     padding: 0px 20px 20px;
 }
-
+/*
+ * CSS page Profile
+ */
 
 
 
