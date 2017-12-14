@@ -31,12 +31,12 @@ $(function () {
       },
       {
         label               : 'Digital Goods',
-        fillColor           : 'rgba(60,141,188,0.9)',
-        strokeColor         : 'rgba(60,141,188,0.8)',
-        pointColor          : '#3b8bba',
-        pointStrokeColor    : 'rgba(60,141,188,1)',
+        fillColor           : 'rgba(197, 157, 95,0.9)',
+        strokeColor         : 'rgba(197, 157, 95,0.8)',
+        pointColor          : 'rgba(197, 157, 95,1)',
+        pointStrokeColor    : 'rgba(197, 157, 95,1)',
         pointHighlightFill  : '#fff',
-        pointHighlightStroke: 'rgba(60,141,188,1)',
+        pointHighlightStroke: 'rgba(197, 157, 95,1)',
         data                : [28, 48, 40, 19, 86, 27, 90]
       }
     ]
