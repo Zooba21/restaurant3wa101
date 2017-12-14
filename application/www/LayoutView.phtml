@@ -35,12 +35,15 @@
         </div>
 
               <?php
-              include('Partiels/MenuViewUser.phtml');
               if (isset($user))
               {
                 if ($user['rights']=='Employed')
                 {
                   include('Partiels/MenuViewAdmin.phtml');
+                }
+                else
+                {
+                  include('Partiels/MenuViewUser.phtml');
                 }
               }
 
