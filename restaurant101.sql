@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Jeu 14 Décembre 2017 à 12:21
+-- Généré le :  Jeu 14 Décembre 2017 à 17:21
 -- Version du serveur :  5.7.20-0ubuntu0.16.04.1
 -- Version de PHP :  7.0.22-0ubuntu0.16.04.1
 
@@ -144,7 +144,7 @@ CREATE TABLE `ressourcesUser` (
   `id` int(11) NOT NULL,
   `userId` int(11) NOT NULL,
   `url` varchar(100) NOT NULL,
-  `alt` varchar(11) NOT NULL
+  `alt` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -166,9 +166,9 @@ CREATE TABLE `user` (
   `firstName` varchar(30) NOT NULL,
   `address` text,
   `address2` text,
-  `postCode` int(6) DEFAULT NULL,
+  `postCode` varchar(6) DEFAULT NULL,
   `city` varchar(40) DEFAULT NULL,
-  `phone` int(11) DEFAULT NULL,
+  `phone` varchar(11) DEFAULT NULL,
   `mail` varchar(40) NOT NULL,
   `inscriptionDate` datetime DEFAULT NULL,
   `rights` enum('User','Employed') NOT NULL DEFAULT 'User'
@@ -179,7 +179,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `firstName`, `address`, `address2`, `postCode`, `city`, `phone`, `mail`, `inscriptionDate`, `rights`) VALUES
-(1, 'admin', 'admin', '87 rue lolo', '', 75000, 'Paris', 658989898, 'administrator@restaurant101.fr', '2017-12-11 00:00:00', 'User'),
+(1, 'Administrator', 'sudo', '1, rue de la Poupée qui tousse', 'Informations', '75013', 'Condé-sur-Vesgre', '0624845824', 'administrator@restaurant101.fr', '2017-12-11 00:00:00', 'Employed'),
 (22, 'Masi', 'Benjamin', NULL, NULL, NULL, NULL, NULL, 'test@hotmail.fr', NULL, 'User'),
 (25, 'Benjamin', 'Masi', NULL, NULL, NULL, NULL, NULL, 'test2@hotmail.fr', NULL, 'User');
 
@@ -233,7 +233,7 @@ ALTER TABLE `reservation`
 --
 ALTER TABLE `ressourcesUser`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `itemSoldId` (`userId`);
+  ADD UNIQUE KEY `userId` (`userId`);
 
 --
 -- Index pour la table `user`
@@ -280,7 +280,7 @@ ALTER TABLE `reservation`
 -- AUTO_INCREMENT pour la table `ressourcesUser`
 --
 ALTER TABLE `ressourcesUser`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT pour la table `user`
 --

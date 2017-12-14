@@ -18,7 +18,7 @@ class UserSession
  * @return [void]               [Pas de return]
  */
 
-    public function create($sessionArray)
+    public function create(array $sessionArray)
     {
 			foreach($sessionArray as $key=>$value)
 			{

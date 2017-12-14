@@ -3,9 +3,9 @@
     <div class="col-md-3">
       <div class="box box-primary">
         <div class="box-body box-profile">
-          <img src="<?= $wwwUrl ?>/images/user/1.jpg" class="profile-user-img img-responsive img-circle" alt="">
+          <img src="<?= $wwwUrl."/".$user['url'] ?>" class="profile-user-img img-responsive img-circle" alt="<?= $user['alt'] ?>">
           <h3 class="profile-username text-center">
-            David GERBER
+            <?= $user['firstName']." ".$user['name'] ?>
           </h3>
           <ul class="list-group list-group-unbordered">
                 <li class="list-group-item">
@@ -87,76 +87,148 @@
                   <!-- /.tab-pane -->
 
                   <div class="tab-pane" id="settings">
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" action="" name="updateUser" method="post" enctype="multipart/form-data">
 
                       <div class="form-group">
                         <label for="inputName" class="col-sm-2 control-label">Nom</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputName" placeholder="Nom">
+                            <input type="text" name="name" class="form-control" id="inputName" value=<?php
+                            if (isset($user['name']))
+                            {
+                              echo($user['name']);
+                            }
+                            else
+                            {
+                              echo("'Nom'");
+                            }
+                             ?>>
                         </div>
                       </div>
 
                       <div class="form-group">
                         <label for="inputName" class="col-sm-2 control-label">Prénom</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" id="inputName" placeholder="Prénom">
+                          <input type="text" name="firstName" class="form-control" id="inputName" value=<?php
+                          if (isset($user['firstName']))
+                          {
+                            echo("'".$user['firstName']."'");
+                          }
+                          else
+                          {
+                            echo("'Prénom'");
+                          }
+                           ?>>
                         </div>
                       </div>
 
                       <div class="form-group">
                         <label for="inputName" class="col-sm-2 control-label">Adresse</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" id="inputName" placeholder="Adresse">
+                          <input type="text" name="address" class="form-control" id="inputName" value=<?php
+                          if (isset($user['address']))
+                          {
+                            echo("'".$user['address']."'");
+                          }
+                          else
+                          {
+                            echo("'Adresse'");
+                          }
+                           ?>>
                         </div>
                       </div>
 
                       <div class="form-group">
-                        <label for="inputName" class="col-sm-2 control-label">Adresse2</label>
+                        <label for="inputName" class="col-sm-2 control-label">Complément d'adresse</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" id="inputName" placeholder="Adresse2">
+                          <input type="text" name="address2" class="form-control" id="inputName" value=<?php
+                          if (isset($user['address2']))
+                          {
+                            echo("'".$user['address2']."'");
+                          }
+                          else
+                          {
+                            echo("'Informations complémentaires'");
+                          }
+                            ?>>
                         </div>
                       </div>
 
                       <div class="form-group">
                         <label for="inputName" class="col-sm-2 control-label">Code Postal</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" id="inputName" placeholder="Code Postal">
+                          <input type="text" name="postCode" class="form-control" id="inputName" value=<?php
+                          if (isset($user['postCode']))
+                          {
+                            echo($user['postCode']);
+                          }
+                          else
+                          {
+                            echo("'Code postal'");
+                          }
+                          ?>>
                         </div>
                       </div>
 
                       <div class="form-group">
                         <label for="inputName" class="col-sm-2 control-label">Ville</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" id="inputName" placeholder="Ville">
+                          <input type="text" name="city" class="form-control" id="inputName" value=<?php
+                          if (isset($user['city']))
+                          {
+                            echo("'".$user['city']."'");
+                          }
+                          else
+                          {
+                            echo("'Ville'");
+                          }
+                          ?>>
                         </div>
                       </div>
 
                       <div class="form-group">
                         <label for="inputName" class="col-sm-2 control-label">Téléphone</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" id="inputName" placeholder="+ 33 ">
+                          <input type="text" name="phone" class="form-control" id="inputName" value=<?php
+                          if (isset($user['phone']))
+                          {
+                            echo("'".$user['phone']."'");
+                          }
+                          else
+                          {
+                            echo("+33");
+                          }
+                          ?>>
                         </div>
                       </div>
 
                       <div class="form-group">
                         <label for="inputEmail" class="col-sm-2 control-label">Email</label>
                         <div class="col-sm-10">
-                          <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                          <input type="email" name="mail" class="form-control" id="inputEmail" value=<?php
+                          if (isset($user['mail']))
+                          {
+                            echo("'".$user['mail']."'");
+                          }
+                          else
+                          {
+                            echo("'adresse mail'");
+                          }
+                          ?>>
                         </div>
                       </div>
 
                       <div class="form-group">
-                        <label for="exampleInputFile" class="col-sm-2 control-label"></label>Entrée de fichier</label>
+                        <label for="exampleInputFile" class="col-sm-2 control-label"></label>Avatar</label>
                         <div class="col-sm-10">
-                        <input type="file" id="exampleInputFile">
-                        <p class="help-block">Exemple de texte d'aide au niveau du bloc ici.</p>
+                        <input type="file" name="avatar" accept="image/*" id="exampleInputFile">
+                        <p class="help-block">Ajouter votre photo de profil ! (fichier images uniquement)</p>
                       </div>
                       </div>
                       <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                           <div class="checkbox">
                             <label>
-                              <input type="checkbox"><a href="#">termes et conditions</a>
+                              <input required type="checkbox"><a href="#">termes et conditions</a>
                             </label>
                           </div>
                         </div>

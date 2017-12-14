@@ -75,7 +75,7 @@ class Http
         return false;
     }
 
-    public function moveUploadedFile($name, $path = null)
+    public function moveUploadedFile(string $name, string $path = null, string $finalName = null)
     {
         if($this->hasUploadedFile($name) == false)
         {
@@ -83,7 +83,7 @@ class Http
         }
 
         // Build the absolute path to the destination file.
-        $filename = WWW_PATH."$path/".$_FILES[$name]['name'];
+        $filename = WWW_PATH."$path/".$finalName;
 
         move_uploaded_file($_FILES[$name]['tmp_name'], $filename);
 

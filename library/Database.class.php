@@ -44,9 +44,7 @@ class Database
 
     public function queryOne($sql, array $criteria = array())
     {
-				var_dump($sql);
-				var_dump($criteria);
-        $query = $this->pdo->prepare($sql);
+				$query = $this->pdo->prepare($sql);
 
         $query->execute($criteria);
         return $query->fetch(PDO::FETCH_ASSOC);

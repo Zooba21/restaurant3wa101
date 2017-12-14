@@ -5,8 +5,6 @@ class HomeController /*implements ControllerInterface*/
     public function httpGetMethod(Http $http, array $queryFields)
     {
       $render = (new UserSession)->getAll();
-
-
       $render['flashbag']= new FlashBag;
 
 
