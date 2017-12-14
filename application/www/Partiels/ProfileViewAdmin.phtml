@@ -1,0 +1,41 @@
+<div class="dropdown user user-menu menu-top">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+    <img src="<?= $wwwUrl."/".$user['url'] ?>" class="user-image" alt="<?= $user['alt'] ?>">
+    <span class="hidden-xs"><?= $user['firstName']." ".$user['name'] ?></span>
+  </a>
+  <div class="dropdown-menu">
+    <!-- User image -->
+    <li class="user-header">
+      <img src="<?= $wwwUrl."/".$user['url'] ?>" class="img-circle img-drpo" alt="<?= $user['alt'] ?>">
+      <p>
+        <?= $user['firstName']." ".$user['name'] ?>
+        <br />
+        <small>Member depuis <?= $user['inscriptionDate'] ?></small>
+      </p>
+    </li>
+    <!-- Menu Body -->
+    <li class="user-body">
+      <div class="row">
+        <div class="col-xs-4 text-center">
+          <a href="#">Commandes</a>
+        </div>
+        <div class="col-xs-4 text-center">
+          <a href="#">Factures</a>
+        </div>
+        <div class="col-xs-4 text-center">
+          <a href="#">lol</a>
+        </div>
+      </div>
+      <!-- /.row -->
+    </li>
+    <!-- Menu Footer-->
+    <li class="user-footer">
+      <div class="pull-left">
+        <a href="<?= $requestUrl ?>/profile" class="btn btn-default btn-flat">Profile</a>
+      </div>
+      <div class="pull-right">
+        <a href="<?= $requestUrl?>/logout" class="btn btn-default btn-flat">Sign out</a>
+      </div>
+    </li>
+  </ul>
+</div>
