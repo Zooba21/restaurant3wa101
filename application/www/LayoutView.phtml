@@ -11,13 +11,13 @@
 
     <!-- Feuilles de styles de l'application -->
     <link rel="stylesheet" href="<?= $wwwUrl ?>/css/3wa-resto.css">
-    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/ui-button.css">
-    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/ui-form.css">
-    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/ui-table.css">
     <link rel="stylesheet" href="<?= $wwwUrl ?>/css/ui-responsive.css">
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/bower_components/jvectormap/jquery-jvectormap.css">
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/dist/css/utilities.css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps|Karla">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Great+Vibes">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
 
     <!-- Librairie jQuery -->
     <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
@@ -29,7 +29,7 @@
 <body>
   <header>
     <nav>
-      <section class="contenair nav-top">
+      <section class="content nav-top">
         <div>
           <a href="<?= $requestUrl ?>"><img style="width:30%;" src="<?= $wwwUrl ?>/images/logo-resto101.png" alt="101 Restaurant Logo"></a>
         </div>
@@ -71,7 +71,7 @@
 
 <!-- Pied de page commun -->
 <footer>
-   <section class="contenair ">
+   <section>
      <div class="col-xs-2 colum">
        <img class="img-resp mb20" src="<?= $wwwUrl ?>/images/logo-resto101-Blanc.png" alt="Resto 101">
        <p>46 Rue René Clair</p>
@@ -101,6 +101,7 @@
 
 <!-- Code principal JavaScript de l'application -->
 <script src="<?= $wwwUrl ?>/js/main.js"></script>
+<script src="<?= $wwwUrl ?>/js/chart.js/Chart.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 

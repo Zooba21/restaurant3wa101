@@ -8,7 +8,7 @@
 
 a
 {
-    color: #c59d5f
+    color: #c59d5f;
     font-weight: bold;
     text-decoration: none;
     transition: color 0.25s!;
@@ -76,7 +76,7 @@ footer{
     background-size: cover;
     background-color: black;
     color: #fff;
-    border-top: 3px solid grey
+    border-top: 3px solid #c59d5f;
 
 }
 footer section{
@@ -137,9 +137,8 @@ html
 
 .content {
     max-width: 1100px;
-    min-height: 250px;
     width: 80%;
-    padding: 80px 30px;
+    padding: 15px 30px;
     margin: 0 auto;
 }
 
