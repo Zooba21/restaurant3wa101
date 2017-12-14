@@ -11,7 +11,7 @@ class UserModel extends AbstractModel
     "SELECT U.`inscriptionDate`, U.`mail`, P.`password`, U.`rights`, U.`id`, U.`name`, U.`firstName`, RU.`url`, RU.`alt`
     FROM `user` as U
     INNER JOIN `password` as P on P.`userId`=U.`id`
-    LEFT JOIN `ressourcesUser` as RU on RU.`userId`=U.`id` 
+    LEFT JOIN `ressourcesUser` as RU on RU.`userId`=U.`id`
     WHERE `mail`=?
     AND `password`=?";
   /**

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Mer 13 Décembre 2017 à 16:55
+-- Généré le :  Jeu 14 Décembre 2017 à 12:21
 -- Version du serveur :  5.7.20-0ubuntu0.16.04.1
 -- Version de PHP :  7.0.22-0ubuntu0.16.04.1
 
@@ -47,15 +47,26 @@ CREATE TABLE `deliveryplaces` (
 
 CREATE TABLE `itemSold` (
   `id` int(11) NOT NULL,
-  `type` enum('Drink','Entrée','Plat','Dessert','Autre') NOT NULL,
+  `type` varchar(20) NOT NULL,
   `buyPrice` int(11) NOT NULL,
   `description` text NOT NULL,
   `name` varchar(70) NOT NULL,
-  `picture` text NOT NULL,
+  `url` varchar(50) NOT NULL,
   `quantityStock` int(11) NOT NULL,
   `salePrice` int(11) NOT NULL,
-  `visibility` enum('1','0') NOT NULL
+  `visibility` enum('1','0') NOT NULL,
+  `alt` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `itemSold`
+--
+
+INSERT INTO `itemSold` (`id`, `type`, `buyPrice`, `description`, `name`, `url`, `quantityStock`, `salePrice`, `visibility`, `alt`) VALUES
+(1, 'plat', 4, 'fromage,steak,lardon,salade,tomate', 'Cheesburger', 'images/meals/bacon_cheesburger.jpg,', 10, 12, '1', 'image cheesburger'),
+(2, 'entrée', 4, 'fromage,thon,salade,tomate', 'Bagel au Thon', 'images/meals/bagel_thon.jpg,', 10, 10, '1', 'image bagel'),
+(3, 'dessert', 1, 'oeuf,crème,carotte', 'Carrot Cake', 'images/meals/carrot_cake.jpg', 10, 5, '1', 'image carrot cake'),
+(4, 'boisson', 1, 'gaz, coke', 'Coca-Cola', 'images/meals/coca.jpg', 10, 2, '1', 'image coca-cola');
 
 -- --------------------------------------------------------
 
@@ -121,19 +132,6 @@ CREATE TABLE `reservation` (
   `phone` int(13) NOT NULL,
   `mail` varchar(50) NOT NULL,
   `reservationDate` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `ressourcesItem`
---
-
-CREATE TABLE `ressourcesItem` (
-  `id` int(11) NOT NULL,
-  `itemSoldId` int(11) NOT NULL,
-  `url` int(11) NOT NULL,
-  `alt` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -231,13 +229,6 @@ ALTER TABLE `reservation`
   ADD KEY `userId` (`userId`);
 
 --
--- Index pour la table `ressourcesItem`
---
-ALTER TABLE `ressourcesItem`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `itemSoldId` (`itemSoldId`);
-
---
 -- Index pour la table `ressourcesUser`
 --
 ALTER TABLE `ressourcesUser`
@@ -264,7 +255,7 @@ ALTER TABLE `deliveryplaces`
 -- AUTO_INCREMENT pour la table `itemSold`
 --
 ALTER TABLE `itemSold`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT pour la table `orderDetails`
 --
@@ -284,11 +275,6 @@ ALTER TABLE `password`
 -- AUTO_INCREMENT pour la table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT pour la table `ressourcesItem`
---
-ALTER TABLE `ressourcesItem`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `ressourcesUser`
@@ -333,12 +319,6 @@ ALTER TABLE `password`
 --
 ALTER TABLE `reservation`
   ADD CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `user` (`id`);
-
---
--- Contraintes pour la table `ressourcesItem`
---
-ALTER TABLE `ressourcesItem`
-  ADD CONSTRAINT `ressourcesItem_ibfk_1` FOREIGN KEY (`itemSoldId`) REFERENCES `itemSold` (`id`);
 
 --
 -- Contraintes pour la table `ressourcesUser`
