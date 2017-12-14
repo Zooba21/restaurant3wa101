@@ -8,14 +8,14 @@
 
 a
 {
-    color: #c59d5f!important;
-    font-weight: bold!important;
-    text-decoration: none!important;
-    transition: color 0.25s!important;
+    color: #c59d5f
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.25s!;
 }
 a:hover
 {
-    color: #c59d5f!important;
+    color: #c59d5f;
 }
 
 body
