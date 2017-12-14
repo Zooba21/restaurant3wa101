@@ -392,6 +392,10 @@ small{
     border-top: 1px solid #dddddd;
 }
 
+.user-menu a{
+  padding-right: 20px;
+}
+
 .img-drpo{
   margin-top: 20px;
   z-index: 5;
@@ -665,8 +669,87 @@ ul, menu, dir {
 }
 
 /*
+ * CSS de la page Menu
+ */
+
+.page-menu{
+  padding: 80px 0;
+}
+
+.menu-item .item-thumb i img {
+    border-radius: 100%;
+    border: 1px solid #c59d5f;
+}
+
+.menu-item {
+    display: flex;
+    padding: 10px;
+    width: 100%;
+    min-height: 89px;
+}
+
+.menu-item > h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    width: 53%;
+    float: left;
+    color: #c59d5f;
+    margin-left: 15px;
+    margin-bottom: 0;
+    margin-top: 17px;
+    letter-spacing: 0.64px;
+    line-height: 26px;
+    text-transform: uppercase;
+}
+.menu-item > span {
+    color: #c59d5f;
+    float: right;
+    width: 28%;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    position: relative;
+    margin-top: 10px;
+}
+
+.menu-item > span::before {
+    border-top: 1px dashed #222222;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    width: 58%;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+
+.menu-item > h3 span {
+    color: #777777;
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.48px;
+    text-transform: none;
+    display: block;
+}
+sup {
+    font-family: Georgia,Times,Times New Roman,serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+
+
+/*
  * CSS de la page de commande
  */
+
+
+
+
+
+
 .basket-empty
 {
     color: #339966;
