@@ -27,7 +27,15 @@ class LoginController
     if (!empty($result))
     {
       $session->create($result);
-      $target->redirectTO('');
+      if ($result['rights']=="Employed")
+      {
+        $target->redirectTO('dashboard');
+      }
+      else
+      {
+        $target->redirectTO('');
+      }
+
     }
     else
     {
