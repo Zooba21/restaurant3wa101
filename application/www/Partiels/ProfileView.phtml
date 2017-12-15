@@ -10,7 +10,7 @@
       <p>
         <?= $user['firstName']." ".$user['name'] ?>
         <br />
-        <small>Member depuis <?= $user['inscriptionDate'] ?></small>
+        <small>Membre depuis <?= $user['inscriptionDate'] ?></small>
       </p>
     </li>
     <!-- Menu Body -->
@@ -34,7 +34,7 @@
         <a href="<?= $requestUrl ?>/profile" class="btn btn-default btn-flat">Profile</a>
       </div>
       <div class="pull-right">
-        <a href="<?= $requestUrl?>/logout" class="btn btn-default btn-flat">Sign out</a>
+        <a href="<?= $requestUrl?>/user/logout" class="btn btn-default btn-flat">Sign out</a>
       </div>
     </li>
   </ul>
