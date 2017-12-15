@@ -15,9 +15,9 @@
 
       public function getMeal(array $productFields)
       {
-        var_dump($productFields);
+
         $result = $this->database->query(self::SQL, $productFields);
-        var_dump($result);
+
         return($result);
       }
 

@@ -1,0 +1,11 @@
+<div class="section-header text-center">
+  <h3><?= $key ?></h3>
+  <h4>Nos meilleurs <?= $key ?>s </h4>
+</div>
+
+<?php
+foreach($key as $meal=>$mealValue)
+{
+    include('Partiels/MealItemView.phtml');
+}
+?>

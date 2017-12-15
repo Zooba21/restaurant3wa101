@@ -1,13 +1,20 @@
 <div class="container page-menu">
 			<!-- Section Header -->
-					<div class="section-header text-center">
+			<?php
+			foreach($menu as $key=>$value)
+			{
+				include("Partiels/TitleMenuView.phtml");
+			}
+
+			 ?>
+					<!-- <div class="section-header text-center">
 						<h3>Nos Entrées'</h3>
             <h4>selection d'entrées</h4>
           </div>
           <!-- Section Header /- -->
 					<!-- Row -->
 					<div class="row">
-							<!-- Menu Item -->
+							 Menu Item -->
 								<div class="col-md-6">
 									<div class="menu-item">
 										<div class="item-thumb">
@@ -193,4 +200,4 @@
                   								</div>
                                   <!-- Menu Item /- -->
     							</div><!-- Row /- -->
-						</div>
+						</div> -->

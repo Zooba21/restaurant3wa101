@@ -9,12 +9,14 @@ class MenuController
 
 $menu = new ItemSoldModel(new Database) ;
 $enumList = ['entrée','plat','dessert','boisson'];
+
+
 foreach($enumList as $key=>$value)
 {
   $render['menu']["$value"] = $menu->getMeal(["$value"]);
 }
 
-var_dump($render);
+
     return $render;
 
   }
