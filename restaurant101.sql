@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Jeu 14 Décembre 2017 à 17:21
+-- Généré le :  Ven 15 Décembre 2017 à 15:54
 -- Version du serveur :  5.7.20-0ubuntu0.16.04.1
 -- Version de PHP :  7.0.22-0ubuntu0.16.04.1
 
@@ -63,10 +63,10 @@ CREATE TABLE `itemSold` (
 --
 
 INSERT INTO `itemSold` (`id`, `type`, `buyPrice`, `description`, `name`, `url`, `quantityStock`, `salePrice`, `visibility`, `alt`) VALUES
-(1, 'plat', 4, 'fromage,steak,lardon,salade,tomate', 'Cheesburger', 'images/meals/bacon_cheesburger.jpg,', 10, 12, '1', 'image cheesburger'),
-(2, 'entrée', 4, 'fromage,thon,salade,tomate', 'Bagel au Thon', 'images/meals/bagel_thon.jpg,', 10, 10, '1', 'image bagel'),
-(3, 'dessert', 1, 'oeuf,crème,carotte', 'Carrot Cake', 'images/meals/carrot_cake.jpg', 10, 5, '1', 'image carrot cake'),
-(4, 'boisson', 1, 'gaz, coke', 'Coca-Cola', 'images/meals/coca.jpg', 10, 2, '1', 'image coca-cola');
+(1, 'plat', 4, 'fromage,steak,lardon,salade,tomate', 'Cheesburger', 'images/meals/1.jpg', 10, 12, '1', 'image cheesburger'),
+(2, 'entrée', 4, 'fromage,thon,salade,tomate', 'Bagel au Thon', 'images/meals/2.jpg', 10, 10, '1', 'image bagel'),
+(3, 'dessert', 1, 'oeuf,crème,carotte', 'Carrot Cake', 'images/meals/3.jpg', 10, 5, '1', 'image carrot cake'),
+(4, 'boisson', 1, 'gaz, coke', 'Coca-Cola', 'images/meals/4.jpg', 10, 2, '1', 'image coca-cola');
 
 -- --------------------------------------------------------
 
@@ -116,7 +116,10 @@ CREATE TABLE `password` (
 INSERT INTO `password` (`id`, `userId`, `password`) VALUES
 (1, 1, 'adminPSD'),
 (13, 22, 'test'),
-(14, 25, 'test');
+(14, 25, 'test'),
+(15, 26, 'test'),
+(16, 30, 'test'),
+(17, 31, 'test');
 
 -- --------------------------------------------------------
 
@@ -152,7 +155,7 @@ CREATE TABLE `ressourcesUser` (
 --
 
 INSERT INTO `ressourcesUser` (`id`, `userId`, `url`, `alt`) VALUES
-(1, 1, 'images/user/1.jpg', 'avatarUser');
+(1, 1, '/images/user/1.gif', 'Titi sudo23 Avatar');
 
 -- --------------------------------------------------------
 
@@ -179,20 +182,16 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `firstName`, `address`, `address2`, `postCode`, `city`, `phone`, `mail`, `inscriptionDate`, `rights`) VALUES
-(1, 'Administrator', 'sudo', '1, rue de la Poupée qui tousse', 'Informations', '75013', 'Condé-sur-Vesgre', '0624845824', 'administrator@restaurant101.fr', '2017-12-11 00:00:00', 'Employed'),
+(1, 'Titi', 'sudo23', '1, rue de la Poupée qui tousse', 'Informations', '75013', 'Paris', '0624845824', 'administrator@restaurant101.fr', '2017-12-11 00:00:00', 'Employed'),
 (22, 'Masi', 'Benjamin', NULL, NULL, NULL, NULL, NULL, 'test@hotmail.fr', NULL, 'User'),
-(25, 'Benjamin', 'Masi', NULL, NULL, NULL, NULL, NULL, 'test2@hotmail.fr', NULL, 'User');
+(25, 'Benjamin', 'Masi', NULL, NULL, NULL, NULL, NULL, 'test2@hotmail.fr', NULL, 'User'),
+(26, 'kimberry', 'kmlkdmslk', NULL, NULL, NULL, NULL, NULL, 'kim@test.fr', NULL, 'User'),
+(30, 'test', 'test', NULL, NULL, NULL, NULL, NULL, 'test@test.fr', NULL, 'User'),
+(31, 'Guillaume', 'Genty', NULL, NULL, NULL, NULL, NULL, 'ggenty@hotmail.fr', NULL, 'User');
 
 --
 -- Index pour les tables exportées
 --
-
---
--- Index pour la table `deliveryplaces`
---
-ALTER TABLE `deliveryplaces`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `user_id` (`user_id`);
 
 --
 -- Index pour la table `itemSold`
@@ -247,11 +246,6 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT pour la table `deliveryplaces`
---
-ALTER TABLE `deliveryplaces`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT pour la table `itemSold`
 --
 ALTER TABLE `itemSold`
@@ -270,7 +264,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT pour la table `password`
 --
 ALTER TABLE `password`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT pour la table `reservation`
 --
@@ -280,21 +274,15 @@ ALTER TABLE `reservation`
 -- AUTO_INCREMENT pour la table `ressourcesUser`
 --
 ALTER TABLE `ressourcesUser`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 --
 -- Contraintes pour les tables exportées
 --
-
---
--- Contraintes pour la table `deliveryplaces`
---
-ALTER TABLE `deliveryplaces`
-  ADD CONSTRAINT `deliveryplaces_ibfk_1` FOREIGN KEY (`id`) REFERENCES `user` (`id`);
 
 --
 -- Contraintes pour la table `orderDetails`
