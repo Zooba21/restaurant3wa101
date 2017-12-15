@@ -1,11 +1,14 @@
 <div class="section-header text-center">
-  <h3><?= $key ?></h3>
+  <h3><?= $key ?>s</h3>
   <h4>Nos meilleurs <?= $key ?>s </h4>
 </div>
-
-<?php
-foreach($key as $meal=>$mealValue)
-{
-    include('Partiels/MealItem');
-}
+<div class="row">
+  <?php
+  foreach($value as $meal=>$mealValue)
+  {
+    // var_dump($meal);
+    // var_dump($mealValue);
+    include(__DIR__."/MealItem.phtml");
+  }
 ?>
+</div>
