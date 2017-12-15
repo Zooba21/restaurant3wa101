@@ -22,7 +22,7 @@ class RegistreController
       {
         $flashBag = new Flashbag;
         $flashBag->add("Le mail saisi existe déjà, veuilez en saisir un autre");
-        $http->redirectTO('registre');
+        $http->redirectTO('user/registre');
       }
 
       $passWordForm = [$queryFields['password'],$lastId];

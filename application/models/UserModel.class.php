@@ -22,10 +22,18 @@ class UserModel extends AbstractModel
     WHERE `mail`=?";
 
     const SQL_AVATAR_UPDATE =
+    "UPDATE `ressourcesUser`
+    SET `alt`=? , `url`=?
+    WHERE `userId`=?";
+
+    const SQL_AVATAR_INSERT =
     "INSERT INTO `ressourcesUser` (`alt`,`url`,`userId`)
-    VALUES (:alt,:url,:userId)
-    ON DUPLICATE KEY
-    UPDATE `url`=:url,`alt`=:alt";
+    VALUES (?,?,?)";
+
+    const SQL_AVATAR_CHECK =
+    "SELECT `userId` FROM `ressourcesUser`
+    WHERE `userId`=?";
+
 
   /**
    * [login Envoi une requête pour récupérer les informations utilisateurs correspondant à ce qui a été saisi dans le formulaire de connexion, si elles existent,]
@@ -38,15 +46,25 @@ class UserModel extends AbstractModel
     return($result);
   }
 
-  public function updateSession (array $queryFields)
+  public function updateSession(array $queryFields)
   {
     $result = $this->database->queryOne(self::SQL_UPDATE, $queryFields);
     return($result);
   }
 
-  public function updateAvatar (array $queryFields)
+  public function updateAvatar(array $queryFields)
   {
 
+    $result = $this->database->queryOne(self::SQL_AVATAR_CHECK,[$queryFields['userId']]);
+     if ($result)
+     {
+       $result=$this->database->executeSql(self::SQL_AVATAR_UPDATE,[$queryFields['alt'],$queryFields['url'],$queryFields['userId']]);
+     }
+     else
+     {
+       $result=$this->database->executeSql(self::SQL_AVATAR_INSERT,[$queryFields['alt'],$queryFields['url'],$queryFields['userId']]);
+     }
+    return($result);
   }
 
 }

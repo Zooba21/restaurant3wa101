@@ -5,6 +5,13 @@
     public function httpGetMethod(Http $http, array $queryFields)
     {
       $render = (new UserSession)->getAll();
+      $render['flashbag']= new FlashBag;
+      if (!isset($render['user']))
+      {
+        $flashbag= new Flashbag;
+        $flashbag->add("Veuillez vous inscrire ou vous connecter pour accéder à cette page");
+        $http->redirectTo('user/registre');
+      }
 
 
 
@@ -18,38 +25,16 @@
     	  return $render;
     }
 
+/**
+ * Mise à jour du profil utilisateur selon les informations saisies dans le formulaire.
+ * @param  Http   $http       [description]
+ * @param  array  $formFields [description]
+ * @return [type]             [description]
+ */
     public function httpPostMethod(Http $http, array $formFields)
     {
-      /*Récupération de la session en cours*/
-      $render = (new UserSession)->getAll();
 
-      /*Déclaration des class*/
-      $user = new UserModel(new Database);
-      $update = new UpdateUserModel(new Database);
-
-      /*Mise à jour du profil utilisateur*/
-      $sqlString = $update->UpdateUser($formFields);
-
-      /*Gestion du $_FILES*/
-      if (isset($_FILES))
-      {
-        $inputFile=$_FILES['avatar'];
-        $inputFile['id']=$render['user']['id'];
-        var_dump($inputFile);
-        $update->UpdateAvatar($inputFile);
-      }
-
-      /*Mise à jour du $_SESSION*/
-      $result = $user->updateSession([$_SESSION['user']['mail']]);
-      $_SESSION['user']=$result;
-      $render['user']=$result;
-       /*
-    	 * Méthode appelée en cas de requête HTTP POST
-    	 *
-    	 * L'argument $http est un objet permettant de faire des redirections etc.
-    	 * L'argument $formFields contient l'équivalent de $_POST en PHP natif.
-    	 */
-    	return $render;
+    	// return $render;
     }
   }
 
