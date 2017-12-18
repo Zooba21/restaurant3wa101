@@ -5,6 +5,11 @@ class DashBoardController
   public function httpGetMethod(Http $http, array $queryFields)
   {
     $render = (new UserSession)->getAll();
+    $acces = new AccessModel(new Database);
+
+    $acces->verifyAcces($http, $render, "Employed");
+
+
 
 
      /*
