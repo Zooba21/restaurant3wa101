@@ -29,8 +29,8 @@
 
     <!-- jQuery 3 -->
     <script src="<?= $wwwUrl ?>/bower_components/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap 3.3.7 -->
-    <!-- <script src="<?= $wwwUrl ?>/bower_components/bootstrap/dist/js/bootstrap.min.js"></script> -->
+    <!-- Bootstrap 3.3.7
+    <script src="<?= $wwwUrl ?>/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- FastClick -->
     <script src="<?= $wwwUrl ?>/bower_components/fastclick/lib/fastclick.js"></script>
     <!-- AdminLTE App -->
@@ -50,6 +50,7 @@
     <script src="<?= $wwwUrl ?>/dist/js/demo.js"></script>
 </head>
 <body>
+    <script src="<?= $wwwUrl ?>/js/sdk.js"></script>
   <header>
     <nav>
       <section class="content nav-top">
@@ -90,7 +91,7 @@
         {
           if($flashbag->hasMessages() == true)
           {?>
-            <aside id="notice" class="notice">
+            <aside  class="callout callout-danger" id="notice" class="notice">
                 <?php foreach($flashbag->fetchMessages() as $message)
                 { ?>
                   <p><?= $message ?></p>
