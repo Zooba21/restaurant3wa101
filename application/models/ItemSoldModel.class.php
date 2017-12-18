@@ -8,9 +8,9 @@
      */
 
     const SQL =
-    "SELECT `type`, `name`, `url`, `alt`, `description`, `salePrice`
+    "SELECT `itemType`, `name`, `url`, `alt`, `description`, `salePrice`
     FROM `itemSold`
-    WHERE type=?";
+    WHERE itemType=?";
 
 
       public function getMeal(array $productFields)
