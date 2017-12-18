@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Ven 15 Décembre 2017 à 15:54
+-- Généré le :  Lun 18 Décembre 2017 à 11:29
 -- Version du serveur :  5.7.20-0ubuntu0.16.04.1
 -- Version de PHP :  7.0.22-0ubuntu0.16.04.1
 
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `restaurant101`
 --
-CREATE DATABASE IF NOT EXISTS `restaurant101` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `restaurant101`;
 
 -- --------------------------------------------------------
 
@@ -47,7 +45,7 @@ CREATE TABLE `deliveryplaces` (
 
 CREATE TABLE `itemSold` (
   `id` int(11) NOT NULL,
-  `type` varchar(20) NOT NULL,
+  `type` enum('entrée','plat','dessert','boisson','autre') NOT NULL,
   `buyPrice` int(11) NOT NULL,
   `description` text NOT NULL,
   `name` varchar(70) NOT NULL,
@@ -66,7 +64,8 @@ INSERT INTO `itemSold` (`id`, `type`, `buyPrice`, `description`, `name`, `url`, 
 (1, 'plat', 4, 'fromage,steak,lardon,salade,tomate', 'Cheesburger', 'images/meals/1.jpg', 10, 12, '1', 'image cheesburger'),
 (2, 'entrée', 4, 'fromage,thon,salade,tomate', 'Bagel au Thon', 'images/meals/2.jpg', 10, 10, '1', 'image bagel'),
 (3, 'dessert', 1, 'oeuf,crème,carotte', 'Carrot Cake', 'images/meals/3.jpg', 10, 5, '1', 'image carrot cake'),
-(4, 'boisson', 1, 'gaz, coke', 'Coca-Cola', 'images/meals/4.jpg', 10, 2, '1', 'image coca-cola');
+(4, 'boisson', 1, 'gaz, coke', 'Coca-Cola', 'images/meals/4.jpg', 10, 2, '1', 'image coca-cola'),
+(5, 'dessert', 1, 'Pate au pepites de chocolats', 'Cookie', 'images/meals/5.jpg', 10, 3, '1', 'image cookie');
 
 -- --------------------------------------------------------
 
@@ -249,7 +248,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `itemSold`
 --
 ALTER TABLE `itemSold`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT pour la table `orderDetails`
 --
