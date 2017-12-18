@@ -1730,6 +1730,7 @@ h6,
   border: 0;
   box-shadow: none;
 }
+
 .box.box-solid[class*='bg'] > .box-header {
   color: #fff;
 }
