@@ -24,7 +24,7 @@
               <div class="nav-tabs-custom">
                 <ul class="nav nav-tabs">
                   <li class="active"><a href="#activity" data-toggle="tab" aria-expanded="true">Activité</a></li>
-                  <li class=""><a href="#timeline" data-toggle="tab" aria-expanded="false">Chronologie</a></li>
+                  <li class=""><a href="#payement" data-toggle="tab" aria-expanded="false">Moyen de Payement</a></li>
                   <li class=""><a href="#settings" data-toggle="tab" aria-expanded="false">Paramètres</a></li>
                   <li class=""><a href="#passwd" data-toggle="tab" aria-expanded="false">Mot de passe</a></li>
                 </ul>
@@ -65,23 +65,60 @@
 
                   </div>
                   <!-- /.tab-pane -->
-                  <div class="tab-pane" id="timeline">
-                    <!-- The timeline -->
-                    <ul class="timeline timeline-inverse">
-                      <!-- timeline time label -->
+                  <div class="tab-pane" id="payement">
+                    <!-- les carte -->
+                    <div class="box box-default collapsed-box">
+                      <div class="box-header with-border">
+                        <h3 class="box-title"><i class="fa fa-cc-visa" aria-hidden="true"></i> -  Carte Perso</h3>
 
-                      <!-- /.timeline-label -->
-                      <!-- timeline item -->
+                          <div class="box-tools pull-right">
+                          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                          </button>
+                          </div>
+                            <!-- /.box-tools -->
+                          </div>
+                          <!-- /.box-header -->
+                          <div class="box-body" style="display: none;">
+                            9999 99999 9999 9999 9999
+                          </div>
+                          <!-- /.box-body -->
+                        </div>
 
-                      <!-- END timeline item -->
-                      <!-- timeline item -->
+                        <div class="box box-default collapsed-box">
+                          <div class="box-header with-border">
+                            <h3 class="box-title"><i class="fa fa-cc-mastercard" aria-hidden="true"></i> -  Carte Pro</h3>
 
-                      <!-- END timeline item -->
-                      <!-- timeline item -->
+                              <div class="box-tools pull-right">
+                              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                              </button>
+                              </div>
+                                <!-- /.box-tools -->
+                              </div>
+                              <!-- /.box-header -->
+                              <div class="box-body" style="display: none;">
+                                9999 99999 9999 9999 9999
+                              </div>
+                              <!-- /.box-body -->
+                            </div>
 
-                      <!-- END timeline item -->
 
-                      <!-- END timeline item -->
+                    <div class="form-group">
+                      <label>Numreo de la carte:</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-laptop"></i></div>
+                                <input type="text" class="form-control" data-inputmask="'alias': 'ip'" data-mask="">
+                            </div>
+                              <!-- /.input group -->
+                        </div>
+                        <div class="form-group">
+                          <label>Cryptogramme</label>
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-laptop"></i></div>
+                                    <input type="text" class="form-control" data-inputmask="'alias': 'ip'" data-mask="">
+                                </div>
+                                  <!-- /.input group -->
+                            </div>
+
 
                   </div>
                   <!-- /.tab-pane -->
