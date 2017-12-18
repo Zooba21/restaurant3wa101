@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Lun 18 Décembre 2017 à 11:29
+-- Généré le :  Lun 18 Décembre 2017 à 17:33
 -- Version du serveur :  5.7.20-0ubuntu0.16.04.1
 -- Version de PHP :  7.0.22-0ubuntu0.16.04.1
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `restaurant101`
 --
+CREATE DATABASE IF NOT EXISTS `restaurant101` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `restaurant101`;
 
 -- --------------------------------------------------------
 
@@ -45,14 +47,14 @@ CREATE TABLE `deliveryplaces` (
 
 CREATE TABLE `itemSold` (
   `id` int(11) NOT NULL,
-  `type` enum('entrée','plat','dessert','boisson','autre') NOT NULL,
-  `buyPrice` int(11) NOT NULL,
+  `itemType` enum('entrée','plat','dessert','boisson','autre') NOT NULL,
+  `buyPrice` int(11) DEFAULT NULL,
   `description` text NOT NULL,
   `name` varchar(70) NOT NULL,
-  `url` varchar(50) NOT NULL,
-  `quantityStock` int(11) NOT NULL,
-  `salePrice` int(11) NOT NULL,
-  `visibility` enum('1','0') NOT NULL,
+  `url` varchar(50) DEFAULT NULL,
+  `quantityStock` int(11) DEFAULT NULL,
+  `salePrice` varchar(11) NOT NULL,
+  `visibility` enum('1','0') NOT NULL DEFAULT '1',
   `alt` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -60,12 +62,12 @@ CREATE TABLE `itemSold` (
 -- Contenu de la table `itemSold`
 --
 
-INSERT INTO `itemSold` (`id`, `type`, `buyPrice`, `description`, `name`, `url`, `quantityStock`, `salePrice`, `visibility`, `alt`) VALUES
-(1, 'plat', 4, 'fromage,steak,lardon,salade,tomate', 'Cheesburger', 'images/meals/1.jpg', 10, 12, '1', 'image cheesburger'),
-(2, 'entrée', 4, 'fromage,thon,salade,tomate', 'Bagel au Thon', 'images/meals/2.jpg', 10, 10, '1', 'image bagel'),
-(3, 'dessert', 1, 'oeuf,crème,carotte', 'Carrot Cake', 'images/meals/3.jpg', 10, 5, '1', 'image carrot cake'),
-(4, 'boisson', 1, 'gaz, coke', 'Coca-Cola', 'images/meals/4.jpg', 10, 2, '1', 'image coca-cola'),
-(5, 'dessert', 1, 'Pate au pepites de chocolats', 'Cookie', 'images/meals/5.jpg', 10, 3, '1', 'image cookie');
+INSERT INTO `itemSold` (`id`, `itemType`, `buyPrice`, `description`, `name`, `url`, `quantityStock`, `salePrice`, `visibility`, `alt`) VALUES
+(1, 'plat', 4, 'fromage,steak,lardon,salade,tomate', 'Cheesburger', 'images/meals/1.jpg', 10, '12', '1', 'image cheesburger'),
+(2, 'entrée', 4, 'fromage,thon,salade,tomate', 'Bagel au Thon', 'images/meals/2.jpg', 10, '10', '1', 'image bagel'),
+(3, 'dessert', 1, 'oeuf,crème,carotte', 'Carrot Cake', 'images/meals/3.jpg', 10, '5', '1', 'image carrot cake'),
+(4, 'boisson', 1, 'gaz, coke', 'Coca-Cola', 'images/meals/4.jpg', 10, '2', '1', 'image coca-cola'),
+(24, 'dessert', NULL, 'Un bon Milk Shake comme on les aime ! Du lait et de l\'amour, rien de plus !', 'Milk Shake', '/images/meals/24.jpeg', NULL, '5', '1', 'Milk Shake');
 
 -- --------------------------------------------------------
 
@@ -128,13 +130,17 @@ INSERT INTO `password` (`id`, `userId`, `password`) VALUES
 
 CREATE TABLE `reservation` (
   `id` int(11) NOT NULL,
-  `userId` int(11) NOT NULL,
-  `name` varchar(20) NOT NULL,
-  `firstName` varchar(30) NOT NULL,
-  `phone` int(13) NOT NULL,
-  `mail` varchar(50) NOT NULL,
+  `userId` int(11) DEFAULT NULL,
   `reservationDate` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `reservation`
+--
+
+INSERT INTO `reservation` (`id`, `userId`, `reservationDate`) VALUES
+(1, 1, '2017-12-18'),
+(2, 1, '2017-12-19');
 
 -- --------------------------------------------------------
 
@@ -248,7 +254,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `itemSold`
 --
 ALTER TABLE `itemSold`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT pour la table `orderDetails`
 --
@@ -268,7 +274,7 @@ ALTER TABLE `password`
 -- AUTO_INCREMENT pour la table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `ressourcesUser`
 --
