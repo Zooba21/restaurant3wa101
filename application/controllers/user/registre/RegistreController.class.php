@@ -42,7 +42,7 @@ class RegistreController
     else {
       $flashBag = new Flashbag;
       $flashBag->add("Les mots de passes ne correspondent pas");
-      $http->redirectTO('registre');
+      $http->redirectTO('user/registre');
      }
 
 
