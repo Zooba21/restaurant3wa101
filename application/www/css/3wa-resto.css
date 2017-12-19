@@ -173,7 +173,10 @@ html
 .row {
     margin-right: -15px;
     margin-left: -15px;
-    padding-top: 70px;
+}
+
+.row-padding-footer {
+  padding-top: 70px;
 }
 
 .box {
@@ -481,8 +484,14 @@ small{
     -webkit-font-smoothing: antialiased;
     font: normal normal normal normal normal normal 1 FontAwesome;
 }
+/*
+ * CSS du contact
+ */
 
-
+.container.container-contact {
+  text-align: center;
+  padding: 125px 22px;
+}
 /*
  * CSS du registre
  */
@@ -836,80 +845,4 @@ sup {
 .invoice .city
 {
     text-transform: uppercase;
-}
-
-
-.i4ewOd-haAclf{
-  background-color: #c59d5f!important;
-}
-
-.cnt-detail-box {
-    text-align: center;
-    display: inline-block;
-    width: 100%;
-    position: relative;
-}
-.contacte-detail-box {
-    text-align: center;
-    display: inline-block;
-    width: 100%;
-    position: relative;
-}
-
-
-@media (min-width: 1200px){
-.cnt-detail-box {
-    padding: 0 25%;
-}
-}
-
-.cnt-detail-box::after {
-    border-left: 2px dashed #c59d5f;
-    content: "";
-    position: absolute;
-    left: -1px;
-    bottom: 30px;
-    height: 60px;
-    width: 3px;
-}
-
-.img-menu{
-  max-width: 84px!important;
-  max-height: 84px;
-}
-.background-section-command{
-background-image: url(../images/surprise-sec-bg.jpg);
-background-repeat: no-repeat;
-background-size: cover;
-background-position: center;
-}
-
-.surprise-content h3 {
-    color: #fff;
-    text-transform: capitalize;
-    font-family: 'Great Vibes', cursive;
-    font-size: 65px;
-    letter-spacing: 1.3px;
-    line-height: 85px;
-    margin-top: 0;
-    margin-bottom: 40px;
-    padding-top: 50px;
-    position: relative;
-    padding-bottom: 40px;
-}
-
-.surprise-content h3::before {
-    background-image: url(../images/section-header-sep.png);
-    background-repeat: no-repeat;
-    background-position: bottom center;
-    display: inline-block;
-    content: "";
-    bottom: 0px;
-    left: 0;
-    right: 0;
-    position: absolute;
-    height: 24px;
-}
-.suprise-content-img{
-  padding-bottom: 50px;
 }

@@ -53,6 +53,13 @@ class ProduitController
       }
 
     }
+
+    $itemsList = new ItemSoldModel(new Database);
+    $enumList = ['entrée','plat','dessert','boisson'];
+    foreach($enumList as $value)
+    {
+      $render['menu'][$value]=$itemsList->getMeal([$value]);
+    }
    return($render);
   }
 }
