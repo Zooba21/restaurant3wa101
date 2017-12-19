@@ -623,6 +623,52 @@ ul, menu, dir {
     line-height: 40px;
 }
 
+.section-commandes h3 {
+    color: #fff;
+    font-family: 'Great Vibes', cursive;
+    font-size: 65px;
+    line-height: 84px;
+    letter-spacing: 2.6px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: relative;
+    text-transform: capitalize;
+}
+
+
+.surprise-content{
+    background-image: url(http://lolthemes.com/demo/wpm/maxrestaurant/wp-content/uploads/2017/01/surprise-sec-bg.jpg);
+    background-position: center;
+    background-repeat: none;
+    background-size: cover;
+}
+
+.surprise-content-over {
+    background-color: rgba(34,34,34,0.6);
+    width: 100%;
+    height:100%;
+    content: "";
+
+}
+
+.suprise-content-img{
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.surprise-content h3::before {
+    background-image: url(../images/section-header-sep.png);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    display: inline-block;
+    content: "";
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    position: absolute;
+    height: 24px;
+}
+
 .services-section .srv-box .img-box {
     display: inline-block;
     width: 100%;
