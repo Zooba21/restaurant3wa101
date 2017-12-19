@@ -858,7 +858,7 @@ sup {
 }
 
 
-.i4ewOd-pzNkMb-tJHJj{
+.i4ewOd-haAclf{
   background-color: #c59d5f!important;
 }
 
@@ -890,4 +890,9 @@ sup {
     bottom: 30px;
     height: 60px;
     width: 3px;
+}
+
+.img-menu{
+  max-width: 84px!important;
+  max-height: 84px;
 }
