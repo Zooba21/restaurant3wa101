@@ -843,7 +843,6 @@ sup {
 {
     text-transform: uppercase;
 }
-<<<<<<< HEAD
 
 
 .i4ewOd-haAclf{
@@ -884,5 +883,39 @@ sup {
   max-width: 84px!important;
   max-height: 84px;
 }
-=======
->>>>>>> f5233cc08da84a8eb1a796c3863c4587e498d63d
+.background-section-command{
+background-image: url(../images/surprise-sec-bg.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+}
+
+.surprise-content h3 {
+    color: #fff;
+    text-transform: capitalize;
+    font-family: 'Great Vibes', cursive;
+    font-size: 65px;
+    letter-spacing: 1.3px;
+    line-height: 85px;
+    margin-top: 0;
+    margin-bottom: 40px;
+    padding-top: 50px;
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.surprise-content h3::before {
+    background-image: url(../images/section-header-sep.png);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    display: inline-block;
+    content: "";
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    position: absolute;
+    height: 24px;
+}
+.suprise-content-img{
+  padding-bottom: 50px;
+}
