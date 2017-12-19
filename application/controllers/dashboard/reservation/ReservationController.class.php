@@ -8,6 +8,7 @@ class ReservationController
     $acces = new AccessModel(new Database);
 
     $acces->verifyAcces($http, $render, "Employed");
+    return($render);
   }
   public function httpPostMethod(Http $http, array $queryFields)
   {
