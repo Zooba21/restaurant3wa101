@@ -23,7 +23,6 @@ class PanierController
         array_push($render['cart'],$result);
       }
     }
-    var_dump($render['cart']);
     return($render);
   }
   public function httpPostMethod(Http $http, array $queryFields)
