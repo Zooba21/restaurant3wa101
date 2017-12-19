@@ -34,6 +34,14 @@ class UserModel extends AbstractModel
     "SELECT `userId` FROM `ressourcesUser`
     WHERE `userId`=?";
 
+    const SQL_DASHBOARD =
+     "SELECT U.`firstName`, U.`inscriptionDate`, RU.`url`, RU.`alt`
+     FROM `user` as U
+     INNER JOIN `password` as P on P.`userId`=U.`id`
+     LEFT JOIN `ressourcesUser` as RU on RU.`userId`=U.`id`
+     ORDER BY U.`id` DESC
+     LIMIT 8";
+
 
   /**
    * [login Envoi une requête pour récupérer les informations utilisateurs correspondant à ce qui a été saisi dans le formulaire de connexion, si elles existent,]
@@ -64,6 +72,12 @@ class UserModel extends AbstractModel
      {
        $result=$this->database->executeSql(self::SQL_AVATAR_INSERT,[$queryFields['alt'],$queryFields['url'],$queryFields['userId']]);
      }
+    return($result);
+  }
+
+  public function getLastestUser()
+  {
+    $result = $this->database->query(self::SQL_DASHBOARD);
     return($result);
   }
 

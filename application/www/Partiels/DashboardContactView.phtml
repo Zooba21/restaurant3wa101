@@ -1,0 +1,17 @@
+<li>
+  <img src=
+  <?php
+  if (empty($value['url']))
+  {
+    echo("$wwwUrl"."/images/user/no-photo.png");
+  }
+  else
+  {
+    echo($wwwUrl.$value['url']);
+  }
+
+  ?>
+  alt="<?= $value['alt']?>"
+  <a class="users-list-name" href="#"><?= $value['firstName'] ?></a>
+  <span class="users-list-date"> <?= $value['inscriptionDate'] ?> </span>
+</li>

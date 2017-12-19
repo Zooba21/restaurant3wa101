@@ -8,6 +8,7 @@ class DashBoardController
     $acces = new AccessModel(new Database);
 
     $acces->verifyAcces($http, $render, "Employed");
+    $render['userList'] = (new UserModel(new Database))->getLastestUser();
 
 
 

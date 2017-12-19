@@ -25,7 +25,7 @@ class Database
 		$query = $this->pdo->prepare($sql);
 
 		$query->execute($values);
-		var_dump($query);
+		
 		if ($query->errorCode() != '00000')
 		{
 	 		throw new ErrorException($query->errorInfo()[2], $query->errorInfo()[0], 1, __FILE__, __LINE__);

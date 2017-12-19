@@ -13,7 +13,7 @@
 
 public function insert(array $queryFields)
 {
-  var_dump($queryFields);
+  
   $result=$this->database->executeSql(self::SQL,$queryFields);
   return($result);
 }
