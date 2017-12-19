@@ -484,6 +484,28 @@ small{
     -webkit-font-smoothing: antialiased;
     font: normal normal normal normal normal normal 1 FontAwesome;
 }
+
+/*
+ * CSS du home commande
+ */
+.surprise-content {
+
+  background-image: url(../images/bg-footer.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  color: #fff;
+  border-top: 3px solid #c59d5f;
+  padding-bottom: 20px;
+  margin-top: 75px;
+
+}
+
+.surprise-content > h3 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 65px;
+}
+
 /*
  * CSS du contact
  */
