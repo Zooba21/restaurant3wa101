@@ -484,8 +484,14 @@ small{
     -webkit-font-smoothing: antialiased;
     font: normal normal normal normal normal normal 1 FontAwesome;
 }
+/*
+ * CSS du contact
+ */
 
-
+.container.container-contact {
+  text-align: center;
+  padding: 125px 22px;
+}
 /*
  * CSS du registre
  */
