@@ -29,7 +29,7 @@ class MenuController
   public function httpPostMethod(Http $http, array $queryFields)
   {
 
-    var_dump($_POST);
+
     $render = (new UserSession)->getAll();// Permet de rester connecté
     $render['flashbag']= new FlashBag;// Mettre sur toutes les pages
     if (!isset($render['user']))
@@ -52,7 +52,9 @@ if (!isset($_SESSION['cart']))
   $_SESSION['cart'] = [];
 }
       array_push($_SESSION['cart'],$queryFields['id']);
-      var_dump($_SESSION);
+
+
+      $flashBag = (new FlashBag)->add("Votre article a bien été ajouté au panier !");
 
 
     return $render;
