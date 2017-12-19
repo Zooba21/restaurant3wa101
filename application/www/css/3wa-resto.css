@@ -335,7 +335,7 @@ img {
 
 
  .dropdown-menu{
-    top: 185%!important;
+     /*top: 185%!important;*/
      border-top-right-radius: 0!important;
      border-top-left-radius: 0!important;
      padding: 0px 0 15px!important;
@@ -717,7 +717,7 @@ ul, menu, dir {
     content: "";
     display: inline-block;
     height: 1px;
-    width: 58%;
+    width: 30%;
     margin-right: 15px;
     vertical-align: middle;
 }
@@ -778,12 +778,6 @@ sup {
 /*
  * CSS de la page de commande
  */
-
-
-
-
-
-
 .basket-empty
 {
     color: #339966;
