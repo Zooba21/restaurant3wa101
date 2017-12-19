@@ -62,16 +62,17 @@
               {
                 if ($user['rights']=='Employed')
                 {
-                  include('Partiels/MenuViewAdmin.phtml');
+                  include('Partiels/NavAdminView.phtml');
                 }
                 else
                 {
-                  include('Partiels/MenuViewUser.phtml');
+                  include('Partiels/NavUserView.phtml');
+                  include('Partiels/NavCartView.phtml');
                 }
               }
               else
               {
-                  include('Partiels/MenuViewUser.phtml');
+                  include('Partiels/NavUserView.phtml');
               }
 
 
@@ -80,11 +81,11 @@
         <div>
           <?php if (isset($user))
           {
-            include('Partiels/ProfileView.phtml');
+            include('Partiels/NavProfileView.phtml');
           }
           else
           {
-            include('Partiels/ConnectView.phtml');
+            include('Partiels/NavConnectView.phtml');
           }?>
         </section>
       </nav>

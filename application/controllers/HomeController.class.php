@@ -6,7 +6,7 @@ class HomeController /*implements ControllerInterface*/
     {
       $render = (new UserSession)->getAll();
       $render['flashbag']= new FlashBag;
-      var_dump($render);
+      
 
 
 
