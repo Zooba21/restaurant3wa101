@@ -856,3 +856,38 @@ sup {
 {
     text-transform: uppercase;
 }
+
+
+.i4ewOd-pzNkMb-tJHJj{
+  background-color: #c59d5f!important;
+}
+
+.cnt-detail-box {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+}
+.contacte-detail-box {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+}
+
+
+@media (min-width: 1200px){
+.cnt-detail-box {
+    padding: 0 25%;
+}
+}
+
+.cnt-detail-box::after {
+    border-left: 2px dashed #c59d5f;
+    content: "";
+    position: absolute;
+    left: -1px;
+    bottom: 30px;
+    height: 60px;
+    width: 3px;
+}
