@@ -95,6 +95,7 @@ footer section div.map-footer{
 }
 .mb20{
     margin-bottom: 20px;
+    width: 85%;
 }
 
 h1
@@ -172,6 +173,7 @@ html
 .row {
     margin-right: -15px;
     margin-left: -15px;
+    padding-top: 70px;
 }
 
 .box {
@@ -623,55 +625,6 @@ ul, menu, dir {
     line-height: 40px;
 }
 
-
-
-
-.section-commandes h3 {
-    color: #fff;
-    font-family: 'Great Vibes', cursive;
-    font-size: 65px;
-    line-height: 84px;
-    letter-spacing: 2.6px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    position: relative;
-    text-transform: capitalize;
-}
-
-
-.surprise-content{
-    background-image: url(http://lolthemes.com/demo/wpm/maxrestaurant/wp-content/uploads/2017/01/surprise-sec-bg.jpg);
-    background-position: center;
-    background-repeat: none;
-    background-size: cover;
-}
-
-.surprise-content-over {
-    background-color: rgba(34,34,34,0.6);
-    width: 100%;
-    height:100%;
-    content: "";
-
-}
-
-.suprise-content-img{
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
-.surprise-content h3::before {
-    background-image: url(../images/section-header-sep.png);
-    background-repeat: no-repeat;
-    background-position: bottom center;
-    display: inline-block;
-    content: "";
-    bottom: 0px;
-    left: 0;
-    right: 0;
-    position: absolute;
-    height: 24px;
-}
-
 .services-section .srv-box .img-box {
     display: inline-block;
     width: 100%;
@@ -730,9 +683,8 @@ ul, menu, dir {
 
 .menu-item {
     display: flex;
-    padding: 10px;
     width: 100%;
-    min-height: 89px;
+    min-height: 20px;
 }
 
 .menu-item > h3 {
@@ -779,6 +731,11 @@ ul, menu, dir {
     text-transform: none;
     display: block;
 }
+
+.menu-quick-link-container {
+    line-height: 0px;
+}
+
 sup {
     font-family: Georgia,Times,Times New Roman,serif;
     font-size: 20px;
@@ -786,7 +743,37 @@ sup {
     margin-right: 5px;
 }
 
+.footer-social {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    padding-left: 0px;
+}
 
+.footer-social > li {
+    border: solid 1px #c59d5f;
+    padding: 5px 10px;
+    border-radius: 9px;
+}
+
+.footer-social > .fa
+{
+      font-size: 20px;
+}
+
+#widget-about-2 {
+    text-align: center;
+}
+
+.container-fluid.bottom-footer > p {
+    padding-top: 40px;
+    text-align:center;
+    font-size: 10px;
+}
+
+.widget-title {
+    text-align: center;
+}
 
 /*
  * CSS de la page de commande
@@ -855,39 +842,4 @@ sup {
 .invoice .city
 {
     text-transform: uppercase;
-}
-
-
-.i4ewOd-pzNkMb-tJHJj{
-  background-color: #c59d5f!important;
-}
-
-.cnt-detail-box {
-    text-align: center;
-    display: inline-block;
-    width: 100%;
-    position: relative;
-}
-.contacte-detail-box {
-    text-align: center;
-    display: inline-block;
-    width: 100%;
-    position: relative;
-}
-
-
-@media (min-width: 1200px){
-.cnt-detail-box {
-    padding: 0 25%;
-}
-}
-
-.cnt-detail-box::after {
-    border-left: 2px dashed #c59d5f;
-    content: "";
-    position: absolute;
-    left: -1px;
-    bottom: 30px;
-    height: 60px;
-    width: 3px;
 }
