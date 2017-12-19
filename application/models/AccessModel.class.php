@@ -22,7 +22,7 @@ class AccessModel extends AbstractModel
   }
   else
   {
-    $flashbag->add("accès refusé, veuillez vous conecter");
+    $flashbag->add("accès refusé, veuillez vous connecter");
     $http->redirectTo('');
   }
 }
