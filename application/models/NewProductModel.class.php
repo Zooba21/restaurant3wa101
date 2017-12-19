@@ -3,10 +3,10 @@
   class NewProductModel extends AbstractModel
   {
     const SQL =
-    "INSERT INTO `itemSold` (`type`, `name`, `description`, `alt`,  `salePrice`)
+    "INSERT INTO `itemSold` (`itemType`, `name`, `description`, `alt`,  `salePrice`)
     VALUES (?,?,?,?,?)";
 
-    const SQL_UPADATE_IMAGE=
+    const SQL_UPDATE_IMAGE=
     "UPDATE `itemSold`
      SET  `url`= ?
      WHERE `id`=?";
@@ -25,23 +25,23 @@ public function updateImage(array $inputFile)
 
     $name=$inputFile['id'].".".$extension;
 
-    $baseUrl='/images/meal/';
+    $baseUrl='/images/meals/';
     $url=$baseUrl.$name;
 
-    $scan = scandir("application/www/images/meal");
+    $scan = scandir("application/www/images/meals");
     foreach($scan as $value)
     {
-      if (preg_match("/^([0-9+])\./",$value,$return))
+      if (preg_match("/^([0-9+])\./",$name,$return))
       {
-        unlink("application/www/images/meal/$value");
+        unlink("application/www/images/meals/$value");
         break;
       }
     }
     $target = (new Http)->moveUploadedFile('url',$baseUrl,$name);
 
-    $newFile=['url'=>$baseUrl.$name,'id'=>$inputFile['id']];
+    $newFile=[$baseUrl.$name,$inputFile['id']];
 
-    $result = $userModel->executeSql($inputFile);
+    $this->database->executeSql(self::SQL_UPDATE_IMAGE,$newFile);
 
 }
   }

@@ -8,7 +8,7 @@
      */
 
     const SQL =
-    "SELECT `itemType`, `name`, `url`, `alt`, `description`, `salePrice`
+    "SELECT `id`,`itemType`, `name`, `url`, `alt`, `description`, `salePrice`
     FROM `itemSold`
     WHERE itemType=?";
 
