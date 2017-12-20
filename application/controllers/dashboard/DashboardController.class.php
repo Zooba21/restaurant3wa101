@@ -10,6 +10,10 @@ class DashBoardController
     $acces->verifyAcces($http, $render, "Employed");
     $render['userList'] = (new UserModel(new Database))->getLastestUser();
 
+    $order = new OrderModel(new Database);
+    $render['order'] = $order->getLastOrder();
+
+
 
 
 
