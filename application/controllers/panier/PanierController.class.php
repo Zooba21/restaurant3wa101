@@ -8,21 +8,17 @@ class PanierController
     $render['flashbag']= new FlashBag;
 
     $cartClass = new CartModel(new Database);
-    if (!isset($_SESSION['cart']))
+
+    $render['cart'] = [];
+    $productList = $_SESSION['cart'];
+
+    foreach($productList as $value)
     {
-      $flashBag = (new FlashBag)->add('Votre panier est vide pour le moment !');
-      $http->redirectTo('panier');
+      $result=$cartClass->getCartEntry($value['id']);
+      $result['quantity']=$value['quantity'];
+      array_push($render['cart'],$result);
     }
-    else
-    {
-      $render['cart'] = [];
-      $productList = $_SESSION['cart'];
-      foreach($productList as $value)
-      {
-        $result=$cartClass->getCartEntry($value);
-        array_push($render['cart'],$result);
-      }
-    }
+
     return($render);
   }
   public function httpPostMethod(Http $http, array $queryFields)
