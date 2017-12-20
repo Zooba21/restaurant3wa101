@@ -485,6 +485,13 @@ small{
     font: normal normal normal normal normal normal 1 FontAwesome;
 }
 
+.col-xs-4.text-center {
+  border-right-width: 27px;
+  left: 12px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
 /*
  * CSS du home commande
  */
@@ -494,16 +501,18 @@ small{
   background-repeat: no-repeat;
   background-size: cover;
   background-color: black;
-  color: #fff;
+  color: #c59d5f;
   border-top: 3px solid #c59d5f;
-  padding-bottom: 20px;
   margin-top: 75px;
+  padding-bottom: 40px;
 
 }
 
 .surprise-content > h3 {
     font-family: 'Great Vibes', cursive;
     font-size: 65px;
+    padding-bottom: 20px;
+    padding-top: 25px;
 }
 
 /*
@@ -665,15 +674,32 @@ ul, menu, dir {
     margin-bottom: 4px;
 }
 
+main > section.services-section.content > div.row > div:nth-child(1) > a > div > div {
+  padding-top: 40px;
+  padding-bottom: 44px;
+}
+
+main > section.services-section.content > div.row > div:nth-child(4) > a > div > div {
+  padding-top: 13px;
+  padding-bottom: 11px;
+  padding-right: 31px;
+  padding-left: 30px;
+}
+
 .bloc-nl{
-  background-image: url('../images/newsletter-bg.jpg');
+  background-image: url('../images/photo_news_letter.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: initial;
   display: flex;
   justify-content: space-around;
   align-items: center;
   color: #fff;
   padding: 20px 0;
+}
+
+.col-md-2.col-sm-6.col-xs-6 {
+  font-size: 28px;
 }
 
 .section-header {
