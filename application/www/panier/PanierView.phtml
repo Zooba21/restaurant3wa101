@@ -41,29 +41,24 @@
   <!-- Table row -->
   <div class="row">
     <div class="col-xs-12 table-responsive">
-      <table class="table table-striped">
-        <thead>
-        <tr>
-          <th>Quantité</th>
-          <th>Produit</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Prix HT</th>
-          <th>Supprimer</th>
-        </tr>
-        </thead>
-        <tbody>
           <?php
 
+        if (isset($cart))
+        {
           foreach($cart as $key=>$value)
           {
+            include(__DIR__."/../Partiels/CartTheadView.phtml");
             include(__DIR__."/../Partiels/CartItemView.phtml");
+            echo("</tbody><table>");
           }
+        }
+        else
+        {
+          echo('<p>Votre panier est vide</p>');
+        }
+
 
            ?>
-
-        </tbody>
-      </table>
     </div>
     <!-- /.col -->
   </div>
@@ -114,18 +109,10 @@
   <div class="row no-print">
     <div class="col-xs-12">
       <a href="invoice-print.html" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Imprimer</a>
-    <?php
-    if (isset($_SESSION['cart']))
-    {
-      echo("<a href='".$requestUrl."/panier/addorder'><button type='button' class='btn btn-success pull-right'><i class='fa fa-credit-card'></i> Payer
-        </button></a>");
-    }
-    else {
-      echo("<button type='button' class='btn btn-success pull-right'><i class='fa fa-credit-card'></i> Payer
-        </button>");
-    }
-    ?>
-      <button type="button" class="btn btn-primary pull-right" style="margin-right: 5px;">
+      <a href='<?= $requestUrl?>/panier/addorder'><button type='button' class='btn btn-success pull-right'><i class='fa fa-credit-card'></i> Payer
+        </button>
+      </a>
+        <button type="button" class="btn btn-primary pull-right" style="margin-right: 5px;">
         <i class="fa fa-download"></i> Génerer PDF
       </button>
     </div>

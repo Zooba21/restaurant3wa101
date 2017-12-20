@@ -6,18 +6,21 @@ class PanierController
   {
     $render = (new UserSession)->getAll();
     $render['flashbag']= new FlashBag;
-
-    $cartClass = new CartModel(new Database);
-
-    $render['cart'] = [];
-    $productList = $_SESSION['cart'];
-
-    foreach($productList as $value)
+    if (isset($_SESSION['cart']))
     {
-      $result=$cartClass->getCartEntry($value['id']);
-      $result['quantity']=$value['quantity'];
-      array_push($render['cart'],$result);
+      $cartClass = new CartModel(new Database);
+
+      $render['cart'] = [];
+      $productList = $_SESSION['cart'];
+
+      foreach($productList as $value)
+      {
+        $result=$cartClass->getCartEntry($value['id']);
+        $result['quantity']=$value['quantity'];
+        array_push($render['cart'],$result);
+      }
     }
+
 
     return($render);
   }
