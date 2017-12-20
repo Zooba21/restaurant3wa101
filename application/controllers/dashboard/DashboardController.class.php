@@ -13,16 +13,19 @@ class DashBoardController
     $order = new OrderModel(new Database);
     $render['order'] = $order->getLastOrder();
 
+    foreach($render['order'] as $key=>$value)
+    {
 
-
-
-
+      $render['order'][$key]['orderDetails']=$order->getOrderDetails([$value['id']]);
+    }
      /*
      * Méthode appelée en cas de requête HTTP GET
      *
      * L'argument $http est un objet permettant de faire des redirections etc.
      * L'argument $queryFields contient l'équivalent de $_GET en PHP natif.
      */
+
+
       return $render;
   }
   public function httpPostMethod(Http $http, array $queryFields)

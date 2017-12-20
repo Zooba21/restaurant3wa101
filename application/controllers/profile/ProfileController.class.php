@@ -6,12 +6,28 @@
     {
       $render = (new UserSession)->getAll();
       $render['flashbag']= new FlashBag;
+      $order = new OrderModel(new Database);
       if (!isset($render['user']))
       {
         $flashbag= new Flashbag;
         $flashbag->add("Veuillez vous inscrire ou vous connecter pour accéder à cette page");
         $http->redirectTo('user/registre');
       }
+      $orderList = $order->getClientOrderList([$render['user']['id']]);
+      if($orderList)
+      {
+        $render['order']=$orderList;
+        foreach($render['order'] as $key=>$value);
+        {
+          $render['order'][$key]['orderDetails']=$order->getOrderDetails([$value['id']]);
+        }
+          $render['user']['orderNumber']=count($render['order']);
+      }
+      else
+      {
+        $render['user']['orderNumber']=0;
+      }
+
 
 
 

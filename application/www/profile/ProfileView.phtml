@@ -9,7 +9,7 @@
           </h3>
           <ul class="list-group list-group-unbordered">
                 <li class="list-group-item">
-                  <b>Commandes</b> <a class="pull-right">60</a>
+                  <b>Commandes</b> <a class="pull-right"><?= $user['orderNumber']?></a>
                 </li>
                 <li class="list-group-item">
                   <b>Points de fidélité</b> <a class="pull-right">543</a>
@@ -22,44 +22,36 @@
     <div class="col-md-9">
               <div class="nav-tabs-custom">
                 <ul class="nav nav-tabs">
-                  <li class="active"><a href="#activity" data-toggle="tab" aria-expanded="true">Activité</a></li>
+                  <li class="active"><a href="#OrderList" data-toggle="tab" aria-expanded="true">Dernières commandes</a></li>
                   <li class=""><a href="#payement" data-toggle="tab" aria-expanded="false">Moyen de Payement</a></li>
                   <li class=""><a href="#settings" data-toggle="tab" aria-expanded="false">Paramètres</a></li>
                   <li class=""><a href="#passwd" data-toggle="tab" aria-expanded="false">Mot de passe</a></li>
                 </ul>
 
                 <div class="tab-content">
-                  <div class="tab-pane active" id="activity">
-                    <!-- Post -->
-                    <div class="post">
-                      <div class="user-block">
+                  <div class="tab-pane active" id="OrderList">
+                    <?php
+                    if (isset($order))
+                    {
+                      echo('<table class="table no-margin">');
+                      include(__DIR__."/../Partiels/ProfileOrderThead.phtml");
+                      foreach($order as $key=>$value)
+                      {
+                        include(__DIR__."/../Partiels/ProfileOrderList.phtml");
+                      }
+                      echo('</tbody></table>');
 
-                      </div>
-                      <!-- /.user-block -->
+                      foreach($order as $key=>$value)
+                      {
+                          include(__DIR__."/../Partiels/DashboardOrderDetail.phtml");
+                      }
 
-                      <input class="form-control input-sm" type="text" placeholder="Type a comment">
-                    </div>
-                    <!-- /.post -->
-
-                    <!-- Post -->
-                    <div class="post clearfix">
-                      <div class="user-block">
-
-                      </div>
-                      <!-- /.user-block -->
-
-                      <form class="form-horizontal">
-                        <div class="form-group margin-bottom-none">
-                          <div class="col-sm-9">
-                            <input class="form-control input-sm" placeholder="Response">
-                          </div>
-                          <div class="col-sm-3">
-                            <button type="submit" class="btn btn-resto101 pull-right btn-block btn-sm">Envoyer</button>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                    <!-- /.post -->
+                    }
+                    else
+                    {
+                      echo("<p>Aucune commande pour le moment</p>");
+                    }
+                    ?>
 
 
                   </div>

@@ -30,10 +30,10 @@ class RegistreController
 
       $session = new UserSession;
       $loginForm =[$queryFields['mail'],$queryFields['password']];
-      var_dump($loginForm);
+
 
       $newAccount = (new UserModel(new Database))->login($loginForm);
-      var_dump($newAccount);
+      
 
       $session->create($newAccount);
 

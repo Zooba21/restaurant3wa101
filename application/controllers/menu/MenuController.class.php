@@ -46,7 +46,7 @@ class MenuController
         $render['menu']["$value"] = $menu->getMeal(["$value"]);
       }
 
-var_dump($queryFields['id']);
+
 if (!isset($_SESSION['cart']))
 {
   $_SESSION['cart'] = [['id'=>$queryFields['id'],'quantity'=>1]];
@@ -66,7 +66,7 @@ else
 
           $_SESSION['cart'][$key]['quantity']++;
           $find++;
-          var_dump($find);
+
           break;
         }
       }
@@ -75,7 +75,7 @@ else
   if ($find == 0)
   {
     $newItemCart = ['id'=>$queryFields['id'],'quantity'=>1];
-    var_dump($newItemCart);
+
     array_push($_SESSION['cart'],$newItemCart);
   }
 }
@@ -85,7 +85,7 @@ else
 
 
     //  $flashBag = (new FlashBag)->add("Votre article a bien été ajouté au panier !");
-var_dump($_SESSION['cart']);
+
 
     return $render;
   }

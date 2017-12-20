@@ -29,7 +29,6 @@ class UserSession
 					$_SESSION['user']['url'] = "images/user/no-photo.png";
 					$_SESSION['user']['alt'] = "Avatar";
 			}
-        var_dump($_SESSION);
     }
 
     public function destroy()

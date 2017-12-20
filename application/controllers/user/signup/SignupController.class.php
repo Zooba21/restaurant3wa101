@@ -4,7 +4,7 @@
   {
     public function httpPostMethod(Http $http, array $queryFields)
     {
-      var_dump($queryFields);
+
         $signUp = new UserModel(new Database);
 
         $userForm = [
@@ -25,7 +25,7 @@
           $typeFile=explode("/",$fileInput['type']);
           $typeFile=$typeFile[1];
           $name="avatar"."$lastId"."$type";
-          var_dump($typeFile);
+          
         }
         else
         {

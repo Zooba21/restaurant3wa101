@@ -1,6 +1,15 @@
 <tr>
   <td><?= $value['id'] ?></td>
+  <td><?= $value['userId'] ?></td>
+  <td><?= $value['name'] ?></td>
+  <td><?= $value['firstName'] ?></td>
   <td><?= $value['orderDate'] ?></td>
   <td><?= $value['status'] ?></td>
-  <td><a href="#"><button><i class="fa fa-times" aria-hidden="true"></i>Détails</a></button></td>
+  <td>
+    <div class="box-body">
+                 <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default<?=  $value['id'] ?>">
+                    Détails
+                 </button>
+    </div>
+  </td>
 </tr>

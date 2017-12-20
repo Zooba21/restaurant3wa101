@@ -22,7 +22,7 @@ class LoginController
 
     $loginForm = [$queryFields['email'],$queryFields['passwd']];
     $result = $login->login($loginForm);
-    var_dump($result);
+    
 
     if (!empty($result))
     {

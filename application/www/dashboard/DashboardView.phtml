@@ -258,6 +258,7 @@
             <!-- /.box-header -->
             <div class="box-body">
               <div class="table-responsive">
+                <table class="table no-margin">
                 <?php
                 if (isset($order))
                 {
@@ -267,14 +268,19 @@
                     include(__DIR__."/../Partiels/DashboardOrderList.phtml");
                   }
                   echo('</tbody></table>');
+
+                  foreach($order as $key=>$value)
+                  {
+                      include(__DIR__."/../Partiels/DashboardOrderDetail.phtml");
+                  }
+
                 }
                 else
                 {
                   echo("<p>Aucune commande pour le moment</p>");
                 }
-
-
                 ?>
+              </table>
               </div>
               <!-- /.table-responsive -->
             </div>

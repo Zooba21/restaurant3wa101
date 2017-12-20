@@ -45,12 +45,12 @@
 
         if (isset($cart))
         {
+          include(__DIR__."/../Partiels/CartTheadView.phtml");
           foreach($cart as $key=>$value)
           {
-            include(__DIR__."/../Partiels/CartTheadView.phtml");
             include(__DIR__."/../Partiels/CartItemView.phtml");
-            echo("</tbody><table>");
           }
+          echo("</tbody><table>");
         }
         else
         {

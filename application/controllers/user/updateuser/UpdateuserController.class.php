@@ -27,7 +27,7 @@
  */
     public function httpPostMethod(Http $http, array $formFields)
     {
-      var_dump($_POST);
+      
       /*Récupération de la session en cours*/
       $render = (new UserSession)->getAll();
 

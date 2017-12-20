@@ -19,13 +19,13 @@ class UpdatepasswordController
     $render = (new UserSession)->getAll();
     $update = new UpdateUserModel(new Database);
     $flashbag = new Flashbag;
-    var_dump($queryFields);
+
 
     if ($queryFields['password'] == $queryFields['confirmPassword'])
     {
       $queryFields['id']=$render['user']['id'];
       $result = $update->updatePassword($queryFields);
-      var_dump($result);
+
       if (!$result)
       {
         $flashbag->add("L'ancien mot de passe est incorrect.");
@@ -39,7 +39,7 @@ class UpdatepasswordController
     }
     else
     {
-      $flashbag->add("Les mots de passes ne correspondent pas. Veuillez réessayer.");
+      $flashbag->add("Les mots de passe ne correspondent pas. Veuillez réessayer.");
       $http->redirectTo('profile');
     }
 
